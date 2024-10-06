@@ -1,0 +1,6 @@
+/home/chen/桌面/任务/CMake任务/CMake_||/CMake_II/build/CMakeFiles/edit_cache.dir
+/home/chen/桌面/任务/CMake任务/CMake_||/CMake_II/build/CMakeFiles/rebuild_cache.dir
+/home/chen/桌面/任务/CMake任务/CMake_||/CMake_II/build/modules/CMakeFiles/edit_cache.dir
+/home/chen/桌面/任务/CMake任务/CMake_||/CMake_II/build/modules/CMakeFiles/rebuild_cache.dir
+/home/chen/桌面/任务/CMake任务/CMake_||/CMake_II/build/common/CMakeFiles/edit_cache.dir
+/home/chen/桌面/任务/CMake任务/CMake_||/CMake_II/build/common/CMakeFiles/rebuild_cache.dir
