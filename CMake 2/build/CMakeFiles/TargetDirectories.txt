@@ -36,6 +36,7 @@
 /home/chen/CMake Task/CMake 2/build/modules/CMakeFiles/edit_cache.dir
 /home/chen/CMake Task/CMake 2/build/modules/CMakeFiles/rebuild_cache.dir
 /home/chen/CMake Task/CMake 2/build/modules/assembly1/CMakeFiles/assembly1.dir
+/home/chen/CMake Task/CMake 2/build/modules/assembly1/CMakeFiles/assembly1_test.dir
 /home/chen/CMake Task/CMake 2/build/modules/assembly1/CMakeFiles/test.dir
 /home/chen/CMake Task/CMake 2/build/modules/assembly1/CMakeFiles/edit_cache.dir
 /home/chen/CMake Task/CMake 2/build/modules/assembly1/CMakeFiles/rebuild_cache.dir

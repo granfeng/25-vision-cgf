@@ -6,10 +6,14 @@ if(OpenCV_FOUND)
     message(STATUS "OpenCV found: ${OpenCV_VERSION}")
 endif()
 
+include_directories(${CMAKE_SOURCE_DIR}/common/rmath/include)
+include_directories(${CMAKE_SOURCE_DIR}/common/singleton/include)
+include_directories(${CMAKE_SOURCE_DIR}/modules/assembly1/include)
+include_directories(${CMAKE_SOURCE_DIR}/modules/assembly2/include)
 include_directories(${CMAKE_SOURCE_DIR}/modules/module1/include)
 include_directories(${CMAKE_SOURCE_DIR}/modules/module2/include)
-include_directories(${CMAKE_SOURCE_DIR}/common/rmath/include)
-include_directories(${CMAKE_SOURCE_DIR}/modules/assembly1/include)
+
+add_definitions(-DWITH_A)
 
 enable_testing()
 
@@ -33,10 +37,12 @@ add_executable(client client.cpp)
 target_include_directories(server PUBLIC ${OpenCV_INCLUDE_DIRS})
 target_include_directories(client PUBLIC ${OpenCV_INCLUDE_DIRS})
 
-target_link_libraries(server PUBLIC rmath singleton module1 module2 ${OpenCV_LIBS})
+target_link_libraries(server PUBLIC rmath singleton assembly1 assembly2 module1 module2 ${OpenCV_LIBS})
 target_link_libraries(client PUBLIC module1 ${OpenCV_LIBS})
 
 add_executable(my_test modules/assembly1//test/assembly1_test.cpp)
+target_include_directories(my_test PUBLIC ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(my_test PUBLIC assembly1 ${OpenCV_LIBS})
 add_test(NAME ctest COMMAND my_test)
 
 include(CTest)

@@ -47,12 +47,13 @@ cmake_ninja_workdir = /home/chen/CMake$ Task/CMake$ 2/build/
 #############################################
 # Order-only phony target for server
 
-build cmake_object_order_depends_target_server: phony || cmake_object_order_depends_target_module1 cmake_object_order_depends_target_module2 cmake_object_order_depends_target_rmath
+build cmake_object_order_depends_target_server: phony || cmake_object_order_depends_target_assembly1 cmake_object_order_depends_target_assembly2 cmake_object_order_depends_target_module1 cmake_object_order_depends_target_module2 cmake_object_order_depends_target_rmath
 
 build CMakeFiles/server.dir/server.cpp.o: CXX_COMPILER__server_Debug /home/chen/CMake$ Task/CMake$ 2/server.cpp || cmake_object_order_depends_target_server
+  DEFINES = -DWITH_A
   DEP_FILE = CMakeFiles/server.dir/server.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -isystem /usr/local/include/opencv4
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -isystem /usr/local/include/opencv4
   OBJECT_DIR = CMakeFiles/server.dir
   OBJECT_FILE_DIR = CMakeFiles/server.dir
 
@@ -64,9 +65,9 @@ build CMakeFiles/server.dir/server.cpp.o: CXX_COMPILER__server_Debug /home/chen/
 #############################################
 # Link the executable server
 
-build server: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/server.cpp.o | common/rmath/librmath.a modules/module1/libmodule1.a modules/module2/libmodule2.a /usr/local/lib/libopencv_gapi.so.4.7.0 /usr/local/lib/libopencv_highgui.so.4.7.0 /usr/local/lib/libopencv_ml.so.4.7.0 /usr/local/lib/libopencv_objdetect.so.4.7.0 /usr/local/lib/libopencv_photo.so.4.7.0 /usr/local/lib/libopencv_stitching.so.4.7.0 /usr/local/lib/libopencv_video.so.4.7.0 /usr/local/lib/libopencv_videoio.so.4.7.0 /usr/local/lib/libopencv_calib3d.so.4.7.0 /usr/local/lib/libopencv_dnn.so.4.7.0 /usr/local/lib/libopencv_features2d.so.4.7.0 /usr/local/lib/libopencv_flann.so.4.7.0 /usr/local/lib/libopencv_imgcodecs.so.4.7.0 /usr/local/lib/libopencv_imgproc.so.4.7.0 /usr/local/lib/libopencv_core.so.4.7.0 || common/rmath/librmath.a modules/module1/libmodule1.a modules/module2/libmodule2.a
+build server: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/server.cpp.o | common/rmath/librmath.a modules/assembly1/libassembly1.a modules/assembly2/libassembly2.a modules/module1/libmodule1.a modules/module2/libmodule2.a /usr/local/lib/libopencv_gapi.so.4.7.0 /usr/local/lib/libopencv_highgui.so.4.7.0 /usr/local/lib/libopencv_ml.so.4.7.0 /usr/local/lib/libopencv_objdetect.so.4.7.0 /usr/local/lib/libopencv_photo.so.4.7.0 /usr/local/lib/libopencv_stitching.so.4.7.0 /usr/local/lib/libopencv_video.so.4.7.0 /usr/local/lib/libopencv_videoio.so.4.7.0 /usr/local/lib/libopencv_calib3d.so.4.7.0 /usr/local/lib/libopencv_dnn.so.4.7.0 /usr/local/lib/libopencv_features2d.so.4.7.0 /usr/local/lib/libopencv_flann.so.4.7.0 /usr/local/lib/libopencv_imgcodecs.so.4.7.0 /usr/local/lib/libopencv_imgproc.so.4.7.0 /usr/local/lib/libopencv_core.so.4.7.0 || common/rmath/librmath.a modules/assembly1/libassembly1.a modules/assembly2/libassembly2.a modules/module1/libmodule1.a modules/module2/libmodule2.a
   FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  common/rmath/librmath.a  -lsingleton  modules/module1/libmodule1.a  modules/module2/libmodule2.a  /usr/local/lib/libopencv_gapi.so.4.7.0  /usr/local/lib/libopencv_highgui.so.4.7.0  /usr/local/lib/libopencv_ml.so.4.7.0  /usr/local/lib/libopencv_objdetect.so.4.7.0  /usr/local/lib/libopencv_photo.so.4.7.0  /usr/local/lib/libopencv_stitching.so.4.7.0  /usr/local/lib/libopencv_video.so.4.7.0  /usr/local/lib/libopencv_videoio.so.4.7.0  /usr/local/lib/libopencv_calib3d.so.4.7.0  /usr/local/lib/libopencv_dnn.so.4.7.0  /usr/local/lib/libopencv_features2d.so.4.7.0  /usr/local/lib/libopencv_flann.so.4.7.0  /usr/local/lib/libopencv_imgcodecs.so.4.7.0  /usr/local/lib/libopencv_imgproc.so.4.7.0  /usr/local/lib/libopencv_core.so.4.7.0
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  common/rmath/librmath.a  -lsingleton  modules/assembly1/libassembly1.a  modules/assembly2/libassembly2.a  modules/module1/libmodule1.a  modules/module2/libmodule2.a  /usr/local/lib/libopencv_gapi.so.4.7.0  /usr/local/lib/libopencv_highgui.so.4.7.0  /usr/local/lib/libopencv_ml.so.4.7.0  /usr/local/lib/libopencv_objdetect.so.4.7.0  /usr/local/lib/libopencv_photo.so.4.7.0  /usr/local/lib/libopencv_stitching.so.4.7.0  /usr/local/lib/libopencv_video.so.4.7.0  /usr/local/lib/libopencv_videoio.so.4.7.0  /usr/local/lib/libopencv_calib3d.so.4.7.0  /usr/local/lib/libopencv_dnn.so.4.7.0  /usr/local/lib/libopencv_features2d.so.4.7.0  /usr/local/lib/libopencv_flann.so.4.7.0  /usr/local/lib/libopencv_imgcodecs.so.4.7.0  /usr/local/lib/libopencv_imgproc.so.4.7.0  /usr/local/lib/libopencv_core.so.4.7.0
   OBJECT_DIR = CMakeFiles/server.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -83,9 +84,10 @@ build server: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/server.c
 build cmake_object_order_depends_target_client: phony || cmake_object_order_depends_target_module1
 
 build CMakeFiles/client.dir/client.cpp.o: CXX_COMPILER__client_Debug /home/chen/CMake$ Task/CMake$ 2/client.cpp || cmake_object_order_depends_target_client
+  DEFINES = -DWITH_A
   DEP_FILE = CMakeFiles/client.dir/client.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -isystem /usr/local/include/opencv4
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -isystem /usr/local/include/opencv4
   OBJECT_DIR = CMakeFiles/client.dir
   OBJECT_FILE_DIR = CMakeFiles/client.dir
 
@@ -97,9 +99,9 @@ build CMakeFiles/client.dir/client.cpp.o: CXX_COMPILER__client_Debug /home/chen/
 #############################################
 # Link the executable client
 
-build client: CXX_EXECUTABLE_LINKER__client_Debug CMakeFiles/client.dir/client.cpp.o | modules/module1/libmodule1.a /usr/local/lib/libopencv_gapi.so.4.7.0 /usr/local/lib/libopencv_highgui.so.4.7.0 /usr/local/lib/libopencv_ml.so.4.7.0 /usr/local/lib/libopencv_objdetect.so.4.7.0 /usr/local/lib/libopencv_photo.so.4.7.0 /usr/local/lib/libopencv_stitching.so.4.7.0 /usr/local/lib/libopencv_video.so.4.7.0 /usr/local/lib/libopencv_videoio.so.4.7.0 /usr/local/lib/libopencv_imgcodecs.so.4.7.0 /usr/local/lib/libopencv_dnn.so.4.7.0 /usr/local/lib/libopencv_calib3d.so.4.7.0 /usr/local/lib/libopencv_features2d.so.4.7.0 /usr/local/lib/libopencv_flann.so.4.7.0 /usr/local/lib/libopencv_imgproc.so.4.7.0 /usr/local/lib/libopencv_core.so.4.7.0 || modules/module1/libmodule1.a
+build client: CXX_EXECUTABLE_LINKER__client_Debug CMakeFiles/client.dir/client.cpp.o | modules/module1/libmodule1.a /usr/local/lib/libopencv_gapi.so.4.7.0 /usr/local/lib/libopencv_highgui.so.4.7.0 /usr/local/lib/libopencv_ml.so.4.7.0 /usr/local/lib/libopencv_objdetect.so.4.7.0 /usr/local/lib/libopencv_photo.so.4.7.0 /usr/local/lib/libopencv_stitching.so.4.7.0 /usr/local/lib/libopencv_video.so.4.7.0 /usr/local/lib/libopencv_videoio.so.4.7.0 /usr/local/lib/libopencv_calib3d.so.4.7.0 /usr/local/lib/libopencv_dnn.so.4.7.0 /usr/local/lib/libopencv_features2d.so.4.7.0 /usr/local/lib/libopencv_flann.so.4.7.0 /usr/local/lib/libopencv_imgcodecs.so.4.7.0 /usr/local/lib/libopencv_imgproc.so.4.7.0 /usr/local/lib/libopencv_core.so.4.7.0 || modules/module1/libmodule1.a
   FLAGS = -g
-  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  modules/module1/libmodule1.a  /usr/local/lib/libopencv_gapi.so.4.7.0  /usr/local/lib/libopencv_highgui.so.4.7.0  /usr/local/lib/libopencv_ml.so.4.7.0  /usr/local/lib/libopencv_objdetect.so.4.7.0  /usr/local/lib/libopencv_photo.so.4.7.0  /usr/local/lib/libopencv_stitching.so.4.7.0  /usr/local/lib/libopencv_video.so.4.7.0  /usr/local/lib/libopencv_videoio.so.4.7.0  /usr/local/lib/libopencv_imgcodecs.so.4.7.0  /usr/local/lib/libopencv_dnn.so.4.7.0  /usr/local/lib/libopencv_calib3d.so.4.7.0  /usr/local/lib/libopencv_features2d.so.4.7.0  /usr/local/lib/libopencv_flann.so.4.7.0  /usr/local/lib/libopencv_imgproc.so.4.7.0  /usr/local/lib/libopencv_core.so.4.7.0
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  modules/module1/libmodule1.a  /usr/local/lib/libopencv_gapi.so.4.7.0  /usr/local/lib/libopencv_highgui.so.4.7.0  /usr/local/lib/libopencv_ml.so.4.7.0  /usr/local/lib/libopencv_objdetect.so.4.7.0  /usr/local/lib/libopencv_photo.so.4.7.0  /usr/local/lib/libopencv_stitching.so.4.7.0  /usr/local/lib/libopencv_video.so.4.7.0  /usr/local/lib/libopencv_videoio.so.4.7.0  /usr/local/lib/libopencv_calib3d.so.4.7.0  /usr/local/lib/libopencv_dnn.so.4.7.0  /usr/local/lib/libopencv_features2d.so.4.7.0  /usr/local/lib/libopencv_flann.so.4.7.0  /usr/local/lib/libopencv_imgcodecs.so.4.7.0  /usr/local/lib/libopencv_imgproc.so.4.7.0  /usr/local/lib/libopencv_core.so.4.7.0
   OBJECT_DIR = CMakeFiles/client.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -113,12 +115,13 @@ build client: CXX_EXECUTABLE_LINKER__client_Debug CMakeFiles/client.dir/client.c
 #############################################
 # Order-only phony target for my_test
 
-build cmake_object_order_depends_target_my_test: phony || CMakeFiles/my_test.dir
+build cmake_object_order_depends_target_my_test: phony || cmake_object_order_depends_target_assembly1
 
 build CMakeFiles/my_test.dir/modules/assembly1/test/assembly1_test.cpp.o: CXX_COMPILER__my_test_Debug /home/chen/CMake$ Task/CMake$ 2/modules/assembly1/test/assembly1_test.cpp || cmake_object_order_depends_target_my_test
+  DEFINES = -DWITH_A
   DEP_FILE = CMakeFiles/my_test.dir/modules/assembly1/test/assembly1_test.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -isystem /usr/local/include/opencv4
   OBJECT_DIR = CMakeFiles/my_test.dir
   OBJECT_FILE_DIR = CMakeFiles/my_test.dir/modules/assembly1/test
 
@@ -130,8 +133,9 @@ build CMakeFiles/my_test.dir/modules/assembly1/test/assembly1_test.cpp.o: CXX_CO
 #############################################
 # Link the executable my_test
 
-build my_test: CXX_EXECUTABLE_LINKER__my_test_Debug CMakeFiles/my_test.dir/modules/assembly1/test/assembly1_test.cpp.o
+build my_test: CXX_EXECUTABLE_LINKER__my_test_Debug CMakeFiles/my_test.dir/modules/assembly1/test/assembly1_test.cpp.o | modules/assembly1/libassembly1.a /usr/local/lib/libopencv_gapi.so.4.7.0 /usr/local/lib/libopencv_highgui.so.4.7.0 /usr/local/lib/libopencv_ml.so.4.7.0 /usr/local/lib/libopencv_objdetect.so.4.7.0 /usr/local/lib/libopencv_photo.so.4.7.0 /usr/local/lib/libopencv_stitching.so.4.7.0 /usr/local/lib/libopencv_video.so.4.7.0 /usr/local/lib/libopencv_videoio.so.4.7.0 /usr/local/lib/libopencv_imgcodecs.so.4.7.0 /usr/local/lib/libopencv_dnn.so.4.7.0 /usr/local/lib/libopencv_calib3d.so.4.7.0 /usr/local/lib/libopencv_features2d.so.4.7.0 /usr/local/lib/libopencv_flann.so.4.7.0 /usr/local/lib/libopencv_imgproc.so.4.7.0 /usr/local/lib/libopencv_core.so.4.7.0 || modules/assembly1/libassembly1.a
   FLAGS = -g
+  LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  modules/assembly1/libassembly1.a  /usr/local/lib/libopencv_gapi.so.4.7.0  /usr/local/lib/libopencv_highgui.so.4.7.0  /usr/local/lib/libopencv_ml.so.4.7.0  /usr/local/lib/libopencv_objdetect.so.4.7.0  /usr/local/lib/libopencv_photo.so.4.7.0  /usr/local/lib/libopencv_stitching.so.4.7.0  /usr/local/lib/libopencv_video.so.4.7.0  /usr/local/lib/libopencv_videoio.so.4.7.0  /usr/local/lib/libopencv_imgcodecs.so.4.7.0  /usr/local/lib/libopencv_dnn.so.4.7.0  /usr/local/lib/libopencv_calib3d.so.4.7.0  /usr/local/lib/libopencv_features2d.so.4.7.0  /usr/local/lib/libopencv_flann.so.4.7.0  /usr/local/lib/libopencv_imgproc.so.4.7.0  /usr/local/lib/libopencv_core.so.4.7.0
   OBJECT_DIR = CMakeFiles/my_test.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -622,9 +626,10 @@ build modules/rebuild_cache: phony modules/CMakeFiles/rebuild_cache.util
 build cmake_object_order_depends_target_assembly1: phony || modules/assembly1/CMakeFiles/assembly1.dir
 
 build modules/assembly1/CMakeFiles/assembly1.dir/src/assembly1.cpp.o: CXX_COMPILER__assembly1_Debug /home/chen/CMake$ Task/CMake$ 2/modules/assembly1/src/assembly1.cpp || cmake_object_order_depends_target_assembly1
+  DEFINES = -DWITH_A
   DEP_FILE = modules/assembly1/CMakeFiles/assembly1.dir/src/assembly1.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include"
   OBJECT_DIR = modules/assembly1/CMakeFiles/assembly1.dir
   OBJECT_FILE_DIR = modules/assembly1/CMakeFiles/assembly1.dir/src
 
@@ -643,6 +648,40 @@ build modules/assembly1/libassembly1.a: CXX_STATIC_LIBRARY_LINKER__assembly1_Deb
   PRE_LINK = :
   TARGET_FILE = modules/assembly1/libassembly1.a
   TARGET_PDB = assembly1.a.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target assembly1_test
+
+
+#############################################
+# Order-only phony target for assembly1_test
+
+build cmake_object_order_depends_target_assembly1_test: phony || cmake_object_order_depends_target_assembly1
+
+build modules/assembly1/CMakeFiles/assembly1_test.dir/test/assembly1_test.cpp.o: CXX_COMPILER__assembly1_test_Debug /home/chen/CMake$ Task/CMake$ 2/modules/assembly1/test/assembly1_test.cpp || cmake_object_order_depends_target_assembly1_test
+  DEFINES = -DWITH_A
+  DEP_FILE = modules/assembly1/CMakeFiles/assembly1_test.dir/test/assembly1_test.cpp.o.d
+  FLAGS = -g
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/modules/assembly1/include"
+  OBJECT_DIR = modules/assembly1/CMakeFiles/assembly1_test.dir
+  OBJECT_FILE_DIR = modules/assembly1/CMakeFiles/assembly1_test.dir/test
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target assembly1_test
+
+
+#############################################
+# Link the executable modules/assembly1/assembly1_test
+
+build modules/assembly1/assembly1_test: CXX_EXECUTABLE_LINKER__assembly1_test_Debug modules/assembly1/CMakeFiles/assembly1_test.dir/test/assembly1_test.cpp.o | modules/assembly1/libassembly1.a || modules/assembly1/libassembly1.a
+  FLAGS = -g
+  LINK_LIBRARIES = modules/assembly1/libassembly1.a
+  OBJECT_DIR = modules/assembly1/CMakeFiles/assembly1_test.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = modules/assembly1/assembly1_test
+  TARGET_PDB = assembly1_test.dbg
 
 
 #############################################
@@ -695,9 +734,10 @@ build modules/assembly1/rebuild_cache: phony modules/assembly1/CMakeFiles/rebuil
 build cmake_object_order_depends_target_assembly2: phony || modules/assembly2/CMakeFiles/assembly2.dir
 
 build modules/assembly2/CMakeFiles/assembly2.dir/src/assembly2.cpp.o: CXX_COMPILER__assembly2_Debug /home/chen/CMake$ Task/CMake$ 2/modules/assembly2/src/assembly2.cpp || cmake_object_order_depends_target_assembly2
+  DEFINES = -DWITH_A
   DEP_FILE = modules/assembly2/CMakeFiles/assembly2.dir/src/assembly2.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -isystem /usr/local/include/opencv4
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -isystem /usr/local/include/opencv4
   OBJECT_DIR = modules/assembly2/CMakeFiles/assembly2.dir
   OBJECT_FILE_DIR = modules/assembly2/CMakeFiles/assembly2.dir/src
 
@@ -768,9 +808,10 @@ build modules/assembly2/rebuild_cache: phony modules/assembly2/CMakeFiles/rebuil
 build cmake_object_order_depends_target_module1: phony || modules/module1/CMakeFiles/module1.dir
 
 build modules/module1/CMakeFiles/module1.dir/src/module1b/module1b.cpp.o: CXX_COMPILER__module1_Debug /home/chen/CMake$ Task/CMake$ 2/modules/module1/src/module1b/module1b.cpp || cmake_object_order_depends_target_module1
+  DEFINES = -DWITH_A
   DEP_FILE = modules/module1/CMakeFiles/module1.dir/src/module1b/module1b.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -isystem /usr/local/include/opencv4
   OBJECT_DIR = modules/module1/CMakeFiles/module1.dir
   OBJECT_FILE_DIR = modules/module1/CMakeFiles/module1.dir/src/module1b
 
@@ -782,7 +823,7 @@ build modules/module1/CMakeFiles/module1.dir/src/module1b/module1b.cpp.o: CXX_CO
 #############################################
 # Link the static library modules/module1/libmodule1.a
 
-build modules/module1/libmodule1.a: CXX_STATIC_LIBRARY_LINKER__module1_Debug modules/module1/CMakeFiles/module1.dir/src/module1b/module1b.cpp.o
+build modules/module1/libmodule1.a: CXX_STATIC_LIBRARY_LINKER__module1_Debug modules/module1/CMakeFiles/module1.dir/src/module1b/module1b.cpp.o || /usr/local/lib/libopencv_gapi.so.4.7.0 /usr/local/lib/libopencv_highgui.so.4.7.0 /usr/local/lib/libopencv_ml.so.4.7.0 /usr/local/lib/libopencv_objdetect.so.4.7.0 /usr/local/lib/libopencv_photo.so.4.7.0 /usr/local/lib/libopencv_stitching.so.4.7.0 /usr/local/lib/libopencv_video.so.4.7.0 /usr/local/lib/libopencv_videoio.so.4.7.0 /usr/local/lib/libopencv_imgcodecs.so.4.7.0 /usr/local/lib/libopencv_dnn.so.4.7.0 /usr/local/lib/libopencv_calib3d.so.4.7.0 /usr/local/lib/libopencv_features2d.so.4.7.0 /usr/local/lib/libopencv_flann.so.4.7.0 /usr/local/lib/libopencv_imgproc.so.4.7.0 /usr/local/lib/libopencv_core.so.4.7.0
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = modules/module1/CMakeFiles/module1.dir
   POST_BUILD = :
@@ -841,44 +882,50 @@ build modules/module1/rebuild_cache: phony modules/module1/CMakeFiles/rebuild_ca
 build cmake_object_order_depends_target_module2: phony || modules/module2/CMakeFiles/module2.dir
 
 build modules/module2/CMakeFiles/module2.dir/src/argument.cpp.o: CXX_COMPILER__module2_Debug /home/chen/CMake$ Task/CMake$ 2/modules/module2/src/argument.cpp || cmake_object_order_depends_target_module2
+  DEFINES = -DWITH_A
   DEP_FILE = modules/module2/CMakeFiles/module2.dir/src/argument.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include"
   OBJECT_DIR = modules/module2/CMakeFiles/module2.dir
   OBJECT_FILE_DIR = modules/module2/CMakeFiles/module2.dir/src
 
 build modules/module2/CMakeFiles/module2.dir/src/client.cpp.o: CXX_COMPILER__module2_Debug /home/chen/CMake$ Task/CMake$ 2/modules/module2/src/client.cpp || cmake_object_order_depends_target_module2
+  DEFINES = -DWITH_A
   DEP_FILE = modules/module2/CMakeFiles/module2.dir/src/client.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include"
   OBJECT_DIR = modules/module2/CMakeFiles/module2.dir
   OBJECT_FILE_DIR = modules/module2/CMakeFiles/module2.dir/src
 
 build modules/module2/CMakeFiles/module2.dir/src/object.cpp.o: CXX_COMPILER__module2_Debug /home/chen/CMake$ Task/CMake$ 2/modules/module2/src/object.cpp || cmake_object_order_depends_target_module2
+  DEFINES = -DWITH_A
   DEP_FILE = modules/module2/CMakeFiles/module2.dir/src/object.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include"
   OBJECT_DIR = modules/module2/CMakeFiles/module2.dir
   OBJECT_FILE_DIR = modules/module2/CMakeFiles/module2.dir/src
 
 build modules/module2/CMakeFiles/module2.dir/src/open62541.c.o: C_COMPILER__module2_Debug /home/chen/CMake$ Task/CMake$ 2/modules/module2/src/open62541.c || cmake_object_order_depends_target_module2
+  DEFINES = -DWITH_A
   DEP_FILE = modules/module2/CMakeFiles/module2.dir/src/open62541.c.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include"
   OBJECT_DIR = modules/module2/CMakeFiles/module2.dir
   OBJECT_FILE_DIR = modules/module2/CMakeFiles/module2.dir/src
 
 build modules/module2/CMakeFiles/module2.dir/src/server.cpp.o: CXX_COMPILER__module2_Debug /home/chen/CMake$ Task/CMake$ 2/modules/module2/src/server.cpp || cmake_object_order_depends_target_module2
+  DEFINES = -DWITH_A
   DEP_FILE = modules/module2/CMakeFiles/module2.dir/src/server.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include"
   OBJECT_DIR = modules/module2/CMakeFiles/module2.dir
   OBJECT_FILE_DIR = modules/module2/CMakeFiles/module2.dir/src
 
 build modules/module2/CMakeFiles/module2.dir/src/variable.cpp.o: CXX_COMPILER__module2_Debug /home/chen/CMake$ Task/CMake$ 2/modules/module2/src/variable.cpp || cmake_object_order_depends_target_module2
+  DEFINES = -DWITH_A
   DEP_FILE = modules/module2/CMakeFiles/module2.dir/src/variable.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include"
   OBJECT_DIR = modules/module2/CMakeFiles/module2.dir
   OBJECT_FILE_DIR = modules/module2/CMakeFiles/module2.dir/src
 
@@ -990,9 +1037,10 @@ build common/rebuild_cache: phony common/CMakeFiles/rebuild_cache.util
 build cmake_object_order_depends_target_rmath: phony || common/rmath/CMakeFiles/rmath.dir
 
 build common/rmath/CMakeFiles/rmath.dir/src/rmath.cpp.o: CXX_COMPILER__rmath_Debug /home/chen/CMake$ Task/CMake$ 2/common/rmath/src/rmath.cpp || cmake_object_order_depends_target_rmath
+  DEFINES = -DWITH_A
   DEP_FILE = common/rmath/CMakeFiles/rmath.dir/src/rmath.cpp.o.d
   FLAGS = -g
-  INCLUDES = -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -isystem /usr/local/include/opencv4
+  INCLUDES = -I"/home/chen/CMake Task/CMake 2/common/rmath/include" -I"/home/chen/CMake Task/CMake 2/common/singleton/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly1/include" -I"/home/chen/CMake Task/CMake 2/modules/assembly2/include" -I"/home/chen/CMake Task/CMake 2/modules/module1/include" -I"/home/chen/CMake Task/CMake 2/modules/module2/include" -isystem /usr/local/include/opencv4
   OBJECT_DIR = common/rmath/CMakeFiles/rmath.dir
   OBJECT_FILE_DIR = common/rmath/CMakeFiles/rmath.dir/src
 
@@ -1053,6 +1101,8 @@ build common/rmath/rebuild_cache: phony common/rmath/CMakeFiles/rebuild_cache.ut
 
 build assembly1: phony modules/assembly1/libassembly1.a
 
+build assembly1_test: phony modules/assembly1/assembly1_test
+
 build assembly2: phony modules/assembly2/libassembly2.a
 
 build libassembly1.a: phony modules/assembly1/libassembly1.a
@@ -1107,7 +1157,7 @@ build modules/all: phony modules/assembly1/all modules/assembly2/all modules/mod
 #############################################
 # Folder: /home/chen/CMake Task/CMake 2/build/modules/assembly1
 
-build modules/assembly1/all: phony modules/assembly1/libassembly1.a
+build modules/assembly1/all: phony modules/assembly1/libassembly1.a modules/assembly1/assembly1_test
 
 # =============================================================================
 
