@@ -26,4 +26,5 @@ add_executable(client client.cpp)
 target_include_directories(server PUBLIC ${OpenCV_INCLUDE_DIRS})
 target_include_directories(client PUBLIC ${OpenCV_INCLUDE_DIRS})
 
-target_link_libraries(main PUBLIC A1 A2 M1 M2 math ${OpenCV_LIBS})
+target_link_libraries(server PUBLIC rmath singleton module1 module2 ${OpenCV_LIBS})
+target_link_libraries(client PUBLIC module1 ${OpenCV_LIBS})
