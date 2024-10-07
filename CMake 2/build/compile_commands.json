@@ -11,11 +11,6 @@
 },
 {
   "directory": "/home/chen/CMake Task/CMake 2/build",
-  "command": "/usr/bin/g++ -DWITH_A -I\"/home/chen/CMake Task/CMake 2/common/rmath/include\" -I\"/home/chen/CMake Task/CMake 2/common/singleton/include\" -I\"/home/chen/CMake Task/CMake 2/modules/assembly1/include\" -I\"/home/chen/CMake Task/CMake 2/modules/assembly2/include\" -I\"/home/chen/CMake Task/CMake 2/modules/module1/include\" -I\"/home/chen/CMake Task/CMake 2/modules/module2/include\" -isystem /usr/local/include/opencv4 -g -o CMakeFiles/my_test.dir/modules/assembly1/test/assembly1_test.cpp.o -c \"/home/chen/CMake Task/CMake 2/modules/assembly1/test/assembly1_test.cpp\"",
-  "file": "/home/chen/CMake Task/CMake 2/modules/assembly1/test/assembly1_test.cpp"
-},
-{
-  "directory": "/home/chen/CMake Task/CMake 2/build",
   "command": "/usr/bin/g++ -DWITH_A -I\"/home/chen/CMake Task/CMake 2/common/rmath/include\" -I\"/home/chen/CMake Task/CMake 2/common/singleton/include\" -I\"/home/chen/CMake Task/CMake 2/modules/assembly1/include\" -I\"/home/chen/CMake Task/CMake 2/modules/assembly2/include\" -I\"/home/chen/CMake Task/CMake 2/modules/module1/include\" -I\"/home/chen/CMake Task/CMake 2/modules/module2/include\" -g -o modules/assembly1/CMakeFiles/assembly1.dir/src/assembly1.cpp.o -c \"/home/chen/CMake Task/CMake 2/modules/assembly1/src/assembly1.cpp\"",
   "file": "/home/chen/CMake Task/CMake 2/modules/assembly1/src/assembly1.cpp"
 },

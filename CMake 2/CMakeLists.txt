@@ -13,10 +13,6 @@ include_directories(${CMAKE_SOURCE_DIR}/modules/assembly2/include)
 include_directories(${CMAKE_SOURCE_DIR}/modules/module1/include)
 include_directories(${CMAKE_SOURCE_DIR}/modules/module2/include)
 
-add_definitions(-DWITH_A)
-
-enable_testing()
-
 # # # # 以下内容禁止修改 # # # #
 option(BUILD_A "build modules a" ON)
 option(BUILD_B "build modules b" OFF)
@@ -24,6 +20,13 @@ option(BUILD_TESTS "build tests" OFF)
 
 if(BUILD_TESTS)
     enable_testing()
+endif()
+
+if(BUILD_A)
+    add_definitions(-DWITH_A)
+endif()
+if(BUILD_B)
+    add_definitions(-DWITH_B)
 endif()
 
 add_subdirectory(modules)
@@ -38,11 +41,6 @@ target_include_directories(server PUBLIC ${OpenCV_INCLUDE_DIRS})
 target_include_directories(client PUBLIC ${OpenCV_INCLUDE_DIRS})
 
 target_link_libraries(server PUBLIC rmath singleton assembly1 assembly2 module1 module2 ${OpenCV_LIBS})
-target_link_libraries(client PUBLIC module1 ${OpenCV_LIBS})
-
-add_executable(my_test modules/assembly1//test/assembly1_test.cpp)
-target_include_directories(my_test PUBLIC ${OpenCV_INCLUDE_DIRS})
-target_link_libraries(my_test PUBLIC assembly1 ${OpenCV_LIBS})
-add_test(NAME ctest COMMAND my_test)
+target_link_libraries(client PUBLIC rmath singleton assembly1 assembly2 module1 module2 ${OpenCV_LIBS})
 
 include(CTest)

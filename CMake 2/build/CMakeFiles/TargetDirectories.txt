@@ -1,6 +1,5 @@
 /home/chen/CMake Task/CMake 2/build/CMakeFiles/server.dir
 /home/chen/CMake Task/CMake 2/build/CMakeFiles/client.dir
-/home/chen/CMake Task/CMake 2/build/CMakeFiles/my_test.dir
 /home/chen/CMake Task/CMake 2/build/CMakeFiles/Experimental.dir
 /home/chen/CMake Task/CMake 2/build/CMakeFiles/Nightly.dir
 /home/chen/CMake Task/CMake 2/build/CMakeFiles/Continuous.dir
