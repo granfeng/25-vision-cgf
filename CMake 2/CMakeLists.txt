@@ -6,6 +6,13 @@ if(OpenCV_FOUND)
     message(STATUS "OpenCV found: ${OpenCV_VERSION}")
 endif()
 
+include_directories(${CMAKE_SOURCE_DIR}/modules/module1/include)
+include_directories(${CMAKE_SOURCE_DIR}/modules/module2/include)
+include_directories(${CMAKE_SOURCE_DIR}/common/rmath/include)
+include_directories(${CMAKE_SOURCE_DIR}/modules/assembly1/include)
+
+enable_testing()
+
 # # # # 以下内容禁止修改 # # # #
 option(BUILD_A "build modules a" ON)
 option(BUILD_B "build modules b" OFF)
@@ -28,3 +35,8 @@ target_include_directories(client PUBLIC ${OpenCV_INCLUDE_DIRS})
 
 target_link_libraries(server PUBLIC rmath singleton module1 module2 ${OpenCV_LIBS})
 target_link_libraries(client PUBLIC module1 ${OpenCV_LIBS})
+
+add_executable(my_test modules/assembly1//test/assembly1_test.cpp)
+add_test(NAME ctest COMMAND my_test)
+
+include(CTest)

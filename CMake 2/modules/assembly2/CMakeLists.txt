@@ -6,4 +6,4 @@ aux_source_directory(src assembly2_Path)
 add_library(assembly2 STATIC ${assembly2_Path})
 
 target_include_directories(assembly2 PUBLIC include)
-target_link_libraries(math ${OpenCV_LIBS})
+target_link_libraries(assembly2 ${OpenCV_LIBS})
