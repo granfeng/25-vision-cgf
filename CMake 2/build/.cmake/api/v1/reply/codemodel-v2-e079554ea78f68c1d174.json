@@ -1,0 +1,274 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						6
+					],
+					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3,
+						6,
+						8
+					]
+				},
+				{
+					"build" : "modules",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4,
+						5
+					],
+					"jsonFile" : "directory-modules-c4db38ae2d0bc927e52f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "modules"
+				},
+				{
+					"build" : "modules/assembly1",
+					"jsonFile" : "directory-modules.assembly1-91a128e4f23fa08566fd.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "modules/assembly1",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "modules/assembly2",
+					"jsonFile" : "directory-modules.assembly2-500966552a15ae5879ce.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "modules/assembly2",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "modules/module1",
+					"jsonFile" : "directory-modules.module1-e50f35ddeb5381e01ccf.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "modules/module1",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "modules/module2",
+					"jsonFile" : "directory-modules.module2-4a6b42aeaf42a2ba0f95.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 1,
+					"source" : "modules/module2",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "common",
+					"childIndexes" : 
+					[
+						7,
+						8
+					],
+					"jsonFile" : "directory-common-6a5c22a1ee7f2aca6d8e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "common"
+				},
+				{
+					"build" : "common/rmath",
+					"jsonFile" : "directory-common.rmath-d9dbdee1833d763db008.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "common/rmath",
+					"targetIndexes" : 
+					[
+						7
+					]
+				},
+				{
+					"build" : "common/singleton",
+					"jsonFile" : "directory-common.singleton-3d62172fceff528f264e.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "common/singleton"
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8
+					],
+					"name" : "Test",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						5
+					],
+					"name" : "module2",
+					"parentIndex" : 0,
+					"targetIndexes" : 
+					[
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "assembly1::@026dd0b34d748695172e",
+					"jsonFile" : "target-assembly1-9b4f4d5aed2e6c7bc7d6.json",
+					"name" : "assembly1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "assembly1_test::@026dd0b34d748695172e",
+					"jsonFile" : "target-assembly1_test-b61ab3550090cab487fb.json",
+					"name" : "assembly1_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "assembly2::@b68fe5f4d53f4ced5627",
+					"jsonFile" : "target-assembly2-9152c85905b6129c6f04.json",
+					"name" : "assembly2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "client::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client-3d97670af1fa4cf4f846.json",
+					"name" : "client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "module1::@9af30fd340da8f4bfef3",
+					"jsonFile" : "target-module1-a427461cee7682d72f41.json",
+					"name" : "module1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 5,
+					"id" : "module2::@d099830ac294d1289245",
+					"jsonFile" : "target-module2-9a2bf97635d931eed199.json",
+					"name" : "module2",
+					"projectIndex" : 1
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "my_test::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-my_test-e7ef7b5867a50930760c.json",
+					"name" : "my_test",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "rmath::@1c8684effe5879bf13b2",
+					"jsonFile" : "target-rmath-71e1489f734b4ecef53d.json",
+					"name" : "rmath",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-server-736c420fc24fcceedf2b.json",
+					"name" : "server",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/chen/CMake Task/CMake 2/build",
+		"source" : "/home/chen/CMake Task/CMake 2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

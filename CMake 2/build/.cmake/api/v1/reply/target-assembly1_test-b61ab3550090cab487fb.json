@@ -1,0 +1,193 @@
+{
+	"artifacts" : 
+	[
+		{
+			"path" : "modules/assembly1/assembly1_test"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_executable",
+			"target_link_libraries",
+			"add_definitions",
+			"include_directories",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"modules/assembly1/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 7,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 9,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 1,
+				"line" : 29,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 9,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 10,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 11,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 12,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 13,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 14,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"defines" : 
+			[
+				{
+					"backtrace" : 4,
+					"define" : "WITH_B"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 5,
+					"path" : "/home/chen/CMake Task/CMake 2/common/rmath/include"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/chen/CMake Task/CMake 2/common/singleton/include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/chen/CMake Task/CMake 2/modules/assembly1/include"
+				},
+				{
+					"backtrace" : 8,
+					"path" : "/home/chen/CMake Task/CMake 2/modules/assembly2/include"
+				},
+				{
+					"backtrace" : 9,
+					"path" : "/home/chen/CMake Task/CMake 2/modules/module1/include"
+				},
+				{
+					"backtrace" : 10,
+					"path" : "/home/chen/CMake Task/CMake 2/modules/module2/include"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "/home/chen/CMake Task/CMake 2/modules/assembly1/modules/assembly1/include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "assembly1::@026dd0b34d748695172e"
+		}
+	],
+	"id" : "assembly1_test::@026dd0b34d748695172e",
+	"link" : 
+	{
+		"commandFragments" : 
+		[
+			{
+				"fragment" : "",
+				"role" : "flags"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "libassembly1.a",
+				"role" : "libraries"
+			}
+		],
+		"language" : "CXX"
+	},
+	"name" : "assembly1_test",
+	"nameOnDisk" : "assembly1_test",
+	"paths" : 
+	{
+		"build" : "modules/assembly1",
+		"source" : "modules/assembly1"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "modules/assembly1/test/assembly1_test.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "EXECUTABLE"
+}

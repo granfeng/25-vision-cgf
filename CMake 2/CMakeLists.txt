@@ -41,6 +41,9 @@ target_include_directories(server PUBLIC ${OpenCV_INCLUDE_DIRS})
 target_include_directories(client PUBLIC ${OpenCV_INCLUDE_DIRS})
 
 target_link_libraries(server PUBLIC rmath singleton assembly1 assembly2 module1 module2 ${OpenCV_LIBS})
-target_link_libraries(client PUBLIC rmath singleton assembly1 assembly2 module1 module2 ${OpenCV_LIBS})
+target_link_libraries(client PUBLIC module1 module2 ${OpenCV_LIBS})
 
-include(CTest)
+add_executable(my_test modules/assembly1//test/assembly1_test.cpp)
+target_include_directories(my_test PUBLIC ${OpenCV_INCLUDE_DIRS})
+target_link_libraries(my_test PUBLIC assembly1  ${OpenCV_LIBS})
+add_test(NAME ctest COMMAND my_test)

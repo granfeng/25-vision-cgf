@@ -1,0 +1,35 @@
+Start testing: Oct 07 16:37 CST
+----------------------------------------------------------
+1/2 Testing: ctest
+1/2 Test: ctest
+Command: "/home/chen/CMake Task/CMake 2/build/my_test"
+Directory: /home/chen/CMake Task/CMake 2/build
+"ctest" start time: Oct 07 16:37 CST
+Output:
+----------------------------------------------------------
+2
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"ctest" end time: Oct 07 16:37 CST
+"ctest" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/2 Testing: test
+2/2 Test: test
+Command: "/home/chen/CMake Task/CMake 2/build/modules/assembly1/assembly1_test"
+Directory: /home/chen/CMake Task/CMake 2/build/modules/assembly1
+"test" start time: Oct 07 16:37 CST
+Output:
+----------------------------------------------------------
+2
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test" end time: Oct 07 16:37 CST
+"test" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 07 16:37 CST
