@@ -1,3 +1,14 @@
+/*
+    实现过程：
+    0.打开视频
+    1.预处理：通道分离、删除己方装甲板颜色、阈值化、膨胀;PnP解算世界坐标
+    2.找轮廓
+    3.遍历提取灯条（面积限定、矫正灯条、宽高比筛选）
+    4.对灯条进行匹配（角差、长度差比率、左右间隔、确定装甲板）
+    5.模板匹配 根据装甲板中心的图案判断是不是装甲板
+    6.求解相机的世界坐标 计算装甲板中心到相机的距离并显示角度
+*/
+
 #include <opencv2/opencv.hpp>
 #include <iostream>
 #include <vector>
@@ -38,6 +49,7 @@ struct LightDescriptor
     float angle;       // 角度
     float length;      // 长度
 
+
     LightDescriptor(const RotatedRect& r) : rect(r)  // 构造函数，初始化灯条的特征
     {
         center = r.center;
@@ -77,29 +89,6 @@ float distance(const Point2f& p1, const Point2f& p2);                           
 double TemplateMatch(const Mat& img, const Mat& templ, Point& matchLoc, int method);                             // 模板匹配
 void calculateWorldCoordinates(const ArmorDescriptor& armor, const Mat& cameraMatrix, const Mat& distCoeffs);    // 计算装甲板在相机坐标系中的位置和姿态
 
-// 定义相机内参和畸变系数 相机焦距:fx,fy  相机的主点坐标：cx,cy  相机的畸变系数 k1, k2, p1, p2, k3
-double fx = 1000, cx = 320, fy = 1000, cy = 240;
-double k1 = 0, k2 = 0, p1 = 0, p2 = 0, k3 = 0;
-// 相机内参矩阵
-Mat cameraMatrix = (Mat_<double>(3, 3) << fx, 0, cx, 0, fy, cy, 0, 0, 1);
-// 相机畸变系数矩阵
-Mat distCoeffs = (Mat_<double>(5, 1) << k1, k2, p1, p2, k3);
-
-// 定义并初始化参数结构体
-Params _param ={210.0f,10.0f,1.0f,0.5f,1.1f,7.0f,0.2f,2.0f,0.5f,5.0f,1.0f,3.2f,2.0f};
-// 定义敌方装甲板的颜色
-EnemyColor _enemy_color = RED;
-// 定义小装甲板和大装甲板的模板图像集合
-vector<Mat> _small_Armor_template, _big_Armor_template;
-// 定义上一次检测到的敌方类型
-int lastEnemy = 0;
-// 定义装甲板检测状态
-ArmorFlag _flag = ARMOR_NO;
-// 定义符合的装甲板集合
-vector<ArmorDescriptor> _armors;
-// 定义并初始化目标装甲板
-ArmorDescriptor _targetArmor(LightDescriptor(RotatedRect()), LightDescriptor(RotatedRect()), SMALL_ARMOR, Mat(), 0.0, _param);
-
 // 主函数
 int main()
 {
@@ -111,6 +100,29 @@ int main()
         cout << "视频无法打开" << endl;
         return -1;
     }
+
+    // 定义相机内参和畸变系数 相机焦距:fx,fy  相机的主点坐标：cx,cy  相机的畸变系数 k1, k2, p1, p2, k3
+    double fx = 1000, cx = 320, fy = 1000, cy = 240;
+    double k1 = 0, k2 = 0, p1 = 0, p2 = 0, k3 = 0;
+    // 相机内参矩阵
+    Mat cameraMatrix = (Mat_<double>(3, 3) << fx, 0, cx, 0, fy, cy, 0, 0, 1);
+    // 相机畸变系数矩阵
+    Mat distCoeffs = (Mat_<double>(5, 1) << k1, k2, p1, p2, k3);
+
+    // 定义并初始化参数结构体
+    Params _param ={210.0f,10.0f,1.0f,0.5f,1.1f,7.0f,0.2f,2.0f,0.5f,5.0f,1.0f,3.2f,2.0f};
+    // 定义敌方装甲板的颜色
+    EnemyColor _enemy_color = RED;
+    // 定义小装甲板和大装甲板的模板图像集合
+    vector<Mat> _small_Armor_template, _big_Armor_template;
+    // 定义上一次检测到的敌方类型
+    int lastEnemy = 0;
+    // 定义装甲板检测状态
+    ArmorFlag _flag = ARMOR_NO;
+    // 定义符合的装甲板集合
+    vector<ArmorDescriptor> _armors;
+    // 定义并初始化目标装甲板
+    ArmorDescriptor _targetArmor(LightDescriptor(RotatedRect()), LightDescriptor(RotatedRect()), SMALL_ARMOR, Mat(), 0.0, _param);
 
     // 运行程序
     Mat frame;
@@ -246,16 +258,8 @@ int main()
         _targetArmor = _armors[0];
         calculateWorldCoordinates(_targetArmor, cameraMatrix, distCoeffs);
 
-        // 在视频中标记灯条和装甲板
-        for (const auto& light : lightInfos) {
-            rectangle(frame, light.rect.boundingRect(), Scalar(0, 255, 0), 2); // 绿色框标记灯条
-        }
-        for (const auto& armor : _armors) {
-            rectangle(frame, boundingRect(armor.vertex), Scalar(255, 0, 0), 2); // 深蓝色框标记装甲板
-        }
-
-        // 显示结果
-        imshow("自瞄", frame);
+         // 显示结果
+        imshow("Frame", frame);
         if (waitKey(30) == 27) break;
     }
 
