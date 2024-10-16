@@ -15,19 +15,19 @@ enum ArmorFlag { ARMOR_NO, ARMOR_LOST, ARMOR_LOCAL };
 // 基本参数
 struct Params
 {
-    float brightness_threshold;           // 亮度阈值
-    float light_min_area;                 // 灯条的最小面积
-    float light_max_ratio;                // 灯条的最大宽高比
-    float light_contour_min_solidity;     // 灯条轮廓的最小凸度
+    float brightness_threshold;            // 亮度阈值————二值化
+    float light_min_area;                  // 灯条的最小面积
+    float light_max_ratio;                 // 灯条的最大宽高比
+    float light_contour_min_solidity;      // 灯条轮廓的最小凸度
     float light_color_detect_extend_ratio; // 灯条颜色检测的扩展比率
-    float light_max_angle_diff_;          // 灯条之间的最大角度差
-    float light_max_height_diff_ratio_;   // 灯条之间的最大高度差比率
-    float light_max_y_diff_ratio_;        // 灯条之间的最大y坐标差比率
-    float light_min_x_diff_ratio_;        // 灯条之间的最小x坐标差比率
-    float armor_max_aspect_ratio_;        // 装甲板的最大宽高比
-    float armor_min_aspect_ratio_;        // 装甲板的最小宽高比
-    float armor_big_armor_ratio;          // 大装甲板的宽高比
-    float armor_small_armor_ratio;        // 小装甲板的宽高比
+    float light_max_angle_diff_;           // 灯条之间的最大角度差————判断是否近似平行
+    float light_max_height_diff_ratio_;    // 灯条之间的最大高度差比率
+    float light_max_y_diff_ratio_;         // 灯条之间的最大y坐标差比率
+    float light_min_x_diff_ratio_;         // 灯条之间的最小x坐标差比率
+    float armor_max_aspect_ratio_;         // 装甲板的最大宽高比
+    float armor_min_aspect_ratio_;         // 装甲板的最小宽高比
+    float armor_big_armor_ratio;           // 大装甲板的宽高比
+    float armor_small_armor_ratio;         // 小装甲板的宽高比
 };
 
 // 灯条特征
@@ -153,7 +153,7 @@ int main()
         vector<LightDescriptor> lightInfos;
         for (const auto& contour : lightContours)
         {
-            // 面积限定
+            // 面积限定——10.0f
             float lightContourArea = contourArea(contour);
             if (lightContourArea < _param.light_min_area) continue;
             // 检查轮廓点数是否足够
@@ -310,7 +310,7 @@ void calculateWorldCoordinates(const ArmorDescriptor& armor, const Mat& cameraMa
     double pitch = atan2(cameraPosition.at<double>(2), cameraPosition.at<double>(0));
     double yaw = atan2(cameraPosition.at<double>(1), cameraPosition.at<double>(0));
 
-    cout << "相机到装甲板的距离: " << distance << " 米" << endl;
+    cout << "相机到装甲板的距离: " << distance << " 厘米" << endl;
     cout << "俯仰角: " << pitch * 180 / CV_PI << " 度" << endl;
     cout << "偏航角: " << yaw * 180 / CV_PI << " 度" << endl;
 }
