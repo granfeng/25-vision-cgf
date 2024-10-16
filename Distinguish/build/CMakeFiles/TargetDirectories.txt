@@ -1,0 +1,3 @@
+/home/chen/Task/Distinguish/build/CMakeFiles/Distinguish.dir
+/home/chen/Task/Distinguish/build/CMakeFiles/edit_cache.dir
+/home/chen/Task/Distinguish/build/CMakeFiles/rebuild_cache.dir

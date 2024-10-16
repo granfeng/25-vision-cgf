@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/chen/Task/Distinguish/build",
+  "command": "/usr/bin/g++ -isystem /usr/local/include/opencv4 -g -std=gnu++11 -o CMakeFiles/Distinguish.dir/Distinguish.cpp.o -c /home/chen/Task/Distinguish/Distinguish.cpp",
+  "file": "/home/chen/Task/Distinguish/Distinguish.cpp"
+}
+]
