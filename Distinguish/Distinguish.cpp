@@ -66,9 +66,6 @@ struct ArmorDescriptor
         Point2f rightBottom = rl.rect.center + Point2f(0, rl.rect.size.height / 2);
         vertex = { leftTop, rightTop, rightBottom, leftBottom };
     }
-
-    // 判断装甲板是否符合模板匹配
-    bool isArmorPattern(std::vector<cv::Mat>& small, std::vector<cv::Mat>& big, int& lastEnemy);
 };
 
 // 函数声明
@@ -76,14 +73,6 @@ void adjustRec(RotatedRect& rec, int mode);                                     
 float distance(const Point2f& p1, const Point2f& p2);                                                            // 计算两点距离
 double TemplateMatch(const Mat& img, const Mat& templ, Point& matchLoc, int method);                             // 模板匹配
 void calculateWorldCoordinates(const ArmorDescriptor& armor, const Mat& cameraMatrix, const Mat& distCoeffs);    // 计算装甲板在相机坐标系中的位置和姿态
-
-// 定义相机内参和畸变系数 相机焦距:fx,fy  相机的主点坐标：cx,cy  相机的畸变系数 k1, k2, p1, p2, k3
-double fx = 1000, cx = 320, fy = 1000, cy = 240;
-double k1 = 0, k2 = 0, p1 = 0, p2 = 0, k3 = 0;
-// 相机内参矩阵
-Mat cameraMatrix = (Mat_<double>(3, 3) << fx, 0, cx, 0, fy, cy, 0, 0, 1);
-// 相机畸变系数矩阵
-Mat distCoeffs = (Mat_<double>(5, 1) << k1, k2, p1, p2, k3);
 
 // 定义并初始化参数结构体
 Params _param ={210.0f,10.0f,1.0f,0.5f,1.1f,7.0f,0.2f,2.0f,0.5f,5.0f,1.0f,3.2f,2.0f};
@@ -112,6 +101,22 @@ int main()
         return -1;
     }
 
+    // 获取视频的宽度和高度
+    int width = static_cast<int>(cap.get(CAP_PROP_FRAME_WIDTH));
+    int height = static_cast<int>(cap.get(CAP_PROP_FRAME_HEIGHT));
+
+    // 创建显示窗口并设置窗口大小
+    namedWindow("自瞄", WINDOW_NORMAL);
+    resizeWindow("自瞄", width, height);
+
+    // 定义相机内参和畸变系数 相机焦距:fx,fy  相机的主点坐标：cx,cy  相机的畸变系数 k1, k2, p1, p2, k3
+    double fx = 1000, cx = width / 2, fy = 1000, cy = height / 2;
+    double k1 = 0, k2 = 0, p1 = 0, p2 = 0, k3 = 0;
+    // 相机内参矩阵
+    Mat cameraMatrix = (Mat_<double>(3, 3) << fx, 0, cx, 0, fy, cy, 0, 0, 1);
+    // 相机畸变系数矩阵
+    Mat distCoeffs = (Mat_<double>(5, 1) << k1, k2, p1, p2, k3);
+
     // 运行程序
     Mat frame;
     while (true)
@@ -133,13 +138,17 @@ int main()
         // 二值化
         Mat binBrightImg;
         threshold(grayImg, binBrightImg, _param.brightness_threshold, 255, THRESH_BINARY);
+        // 高斯模糊
+        const Size kGaussianBlurSize = Size(5, 5);
+        Mat gaussianBlurred;
+        GaussianBlur(binBrightImg, gaussianBlurred, kGaussianBlurSize, 0);
         // 膨胀
+        Mat dilated;
         Mat element = getStructuringElement(MORPH_ELLIPSE, Size(3, 3));
-        dilate(binBrightImg, binBrightImg, element);
-        
+        dilate(gaussianBlurred, dilated, element);
         // 查找轮廓，储存灯条
         vector<vector<Point>> lightContours;
-        findContours(binBrightImg.clone(), lightContours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
+        findContours(dilated, lightContours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
         // 筛选灯条
         vector<LightDescriptor> lightInfos;
         for (const auto& contour : lightContours)
@@ -168,18 +177,13 @@ int main()
             // 存储符合条件的灯条
             lightInfos.push_back(LightDescriptor(lightRec));
         }
-        // 更新筛选结果
-        if (lightInfos.empty())
-        {
-            _flag = ARMOR_NO;
-            continue;
-        }
         // 灯条排序
         sort(lightInfos.begin(), lightInfos.end(), [](const LightDescriptor& ld1, const LightDescriptor& ld2) 
         {
             return ld1.center.x < ld2.center.x;
         });
         // 匹配灯条 框选装甲板
+        // 清空防干扰
         _armors.clear();
         // 遍历
         for (size_t i = 0; i < lightInfos.size(); i++)
@@ -218,40 +222,21 @@ int main()
                 break;
             }
         }
-        // 更新装甲板筛选结果
-        if (_armors.empty())
-        {
-            _flag = ARMOR_NO;
-            continue;
-        }
-        // 移除不符合模板匹配条件的装甲板
-        _armors.erase(remove_if(_armors.begin(), _armors.end(), [&](ArmorDescriptor& i)
-        {
-            return 0 == (i.isArmorPattern(_small_Armor_template, _big_Armor_template, lastEnemy));
-        }), _armors.end());
-        // 检测装甲板筛选结果
-        if (_armors.empty())
-        {
-            if (_flag == ARMOR_LOCAL)
-            {
-                _flag = ARMOR_LOST;
-            }
-            else
-            {
-                _flag = ARMOR_NO;
-            }
-            continue;
-        }
         // 选择目标装甲板并计算目标装甲板的世界坐标
-        _targetArmor = _armors[0];
-        calculateWorldCoordinates(_targetArmor, cameraMatrix, distCoeffs);
+        if (!_armors.empty())
+        {
+            _targetArmor = _armors[0];
+            calculateWorldCoordinates(_targetArmor, cameraMatrix, distCoeffs);
+        }
 
         // 在视频中标记灯条和装甲板
-        for (const auto& light : lightInfos) {
-            rectangle(frame, light.rect.boundingRect(), Scalar(0, 255, 0), 2); // 绿色框标记灯条
+        for (const auto& light : lightInfos)  // 绿色框标记灯条
+        {
+            rectangle(frame, light.rect.boundingRect(), Scalar(0, 255, 0), 2); 
         }
-        for (const auto& armor : _armors) {
-            rectangle(frame, boundingRect(armor.vertex), Scalar(255, 0, 0), 2); // 深蓝色框标记装甲板
+        for (const auto& armor : _armors)     // 深蓝色框标记装甲板
+        {
+            rectangle(frame, boundingRect(armor.vertex), Scalar(255, 0, 0), 2); 
         }
 
         // 显示结果
@@ -263,43 +248,6 @@ int main()
     cap.release();
     destroyAllWindows();
     return 0;
-}
-
-bool ArmorDescriptor::isArmorPattern(std::vector<cv::Mat>& small, std::vector<cv::Mat>& big, int& lastEnemy)
-{
-    // 获取装甲板的前视图图像
-    cv::Mat armorImg = this->frontImg;
-    // 选择模板图像集合
-    std::vector<cv::Mat>& templates = (this->type == SMALL_ARMOR) ? small : big;
-    // 初始化匹配结果
-    double maxVal = 0;
-    cv::Point matchLoc;
-    // 遍历模板图像集合，进行模板匹配
-    for (const auto& templ : templates)
-    {
-        cv::Mat result;
-        cv::matchTemplate(armorImg, templ, result, cv::TM_CCOEFF_NORMED);
-        double minVal, val;
-        cv::Point minLoc, loc;
-        cv::minMaxLoc(result, &minVal, &val, &minLoc, &loc);
-        // 更新最大匹配值和匹配位置
-        if (val > maxVal)
-        {
-            maxVal = val;
-            matchLoc = loc;
-        }
-    }
-    // 判断匹配结果是否符合条件
-    if (maxVal > 0.5)
-    { 
-        // 假设匹配阈值为 0.5
-        lastEnemy = (this->type == SMALL_ARMOR) ? 0 : 1; // 假设小装甲板对应敌方类型 0，大装甲板对应敌方类型 1
-        return true;
-    } 
-    else
-    {
-        return false;
-    }
 }
 
 void adjustRec(RotatedRect& rec, int mode)
