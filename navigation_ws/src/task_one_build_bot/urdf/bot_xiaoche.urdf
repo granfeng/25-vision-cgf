@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<robot name="bot_xiaoche">
+
+    <!-- 定义颜色 -->
+    <material name="red">
+        <color rgba="1 0 0 1"/> <!-- 红色 用于车身 -->
+    </material>
+    <material name="black">
+        <color rgba="0 0 0 1"/> <!-- 黑色 用于车轮 -->
+    </material>
+
+    <!-- 定义车身 -->
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="0.5 0.3 0.2"/> <!-- 车身的长宽高 -->
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/> <!-- 车身的初始位置和姿态 -->
+            <material name="red"/> <!-- 引用红色材质 -->
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.5 0.3 0.2"/> <!-- 车身的碰撞体积 -->
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0"/> <!-- 碰撞体积的初始位置和姿态 -->
+        </collision>
+        <inertial>
+            <mass value="50.0"/> <!-- 车身的质量 -->
+            <origin xyz="0 0 0" rpy="0 0 0"/> <!-- 质心的位置 -->
+            <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/> <!-- 惯性矩阵 -->
+        </inertial>
+    </link>
+
+    <!-- 定义前左轮 -->
+    <link name="front_left_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/> <!-- 轮子的半径和厚度 -->
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/> <!-- 轮子的初始位置和姿态 -->
+            <material name="black"/> <!-- 引用黑色材质 -->
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/> <!-- 轮子的碰撞体积 -->
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/> <!-- 碰撞体积的初始位置和姿态 -->
+        </collision>
+        <inertial>
+            <mass value="1.0"/> <!-- 轮子的质量 -->
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/> <!-- 质心的位置 -->
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/> <!-- 惯性矩阵 -->
+        </inertial>
+    </link>
+
+    <!-- 定义前左轮关节 -->
+    <joint name="front_left_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="front_left_wheel"/>
+        <origin xyz="0.2 0.15 0" rpy="0 0 0"/> <!-- 轮子的位置相对于车身 -->
+        <axis xyz="0 1 0"/> <!-- 轮子的旋转轴 -->
+    </joint>
+
+    <!-- 定义前右轮 -->
+    <link name="front_right_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/> 
+            <material name="black"/> 
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/> 
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/> 
+        </collision>
+        <inertial>
+            <mass value="1.0"/> 
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/> 
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/> 
+        </inertial>
+    </link>
+
+    <!-- 定义前右轮关节 -->
+    <joint name="front_right_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="front_right_wheel"/>
+        <origin xyz="0.2 -0.15 0" rpy="0 0 0"/> 
+        <axis xyz="0 1 0"/> 
+    </joint>
+
+    <!-- 定义后左轮 -->
+    <link name="rear_left_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+        </collision>
+        <inertial>
+            <mass value="1.0"/> 
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+        </inertial>
+    </link>
+
+    <!-- 定义后左轮关节 -->
+    <joint name="rear_left_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="rear_left_wheel"/>
+        <origin xyz="-0.2 0.15 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+    <!-- 定义后右轮 -->
+    <link name="rear_right_wheel">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+            <material name="black"/>
+        </visual>
+        <collision>
+            <geometry>
+                <cylinder radius="0.1" length="0.05"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+        </collision>
+        <inertial>
+            <mass value="1.0"/>
+            <origin xyz="0 0 0" rpy="1.5707963 0 0"/>
+            <inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/>
+        </inertial>
+    </link>
+
+    <!-- 定义后右轮关节 -->
+    <joint name="rear_right_wheel_joint" type="continuous">
+        <parent link="base_link"/>
+        <child link="rear_right_wheel"/>
+        <origin xyz="-0.2 -0.15 0" rpy="0 0 0"/>
+        <axis xyz="0 1 0"/>
+    </joint>
+
+</robot>
