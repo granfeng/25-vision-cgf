@@ -9,6 +9,13 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(urdf REQUIRED)
 find_package(xacro REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(rclpy REQUIRED)
+find_package(robot_state_publisher REQUIRED)
+find_package(joint_state_publisher REQUIRED)
+find_package(joint_state_publisher_gui REQUIRED)
+find_package(rviz2 REQUIRED)
+find_package(gazebo_ros REQUIRED)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -23,3 +30,22 @@ if(BUILD_TESTING)
 endif()
 
 ament_package()
+
+
+# Install URDF files
+install(DIRECTORY
+  urdf
+  DESTINATION share/${PROJECT_NAME}
+)
+
+# Install RViz configuration files
+install(DIRECTORY
+  rviz
+  DESTINATION share/${PROJECT_NAME}
+)
+
+# Install launch files
+install(DIRECTORY
+  launch
+  DESTINATION share/${PROJECT_NAME}
+)

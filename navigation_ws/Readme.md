@@ -9,12 +9,19 @@
 3. 好用的插件
     + ros snippets
     + xml tools
-4. 啊啊啊啊啊
+4. 实现逻辑
+    + 建模（车模、传感器模型）
+    + launch文件
+    + 联动rviz、gazebo
+    + 更新cmakelists、xml文件
+    + 编译运行
 
 ### ***2. 实现遇到的困难or提升空间***
-1. catkin包移植到ros2上
+1. catkin包移植到ros2上，比较复杂
 2. py语言基础不好，launch读起来很费劲
-3. 可以用solidworks建一个更好看的小车模型
+3. 找到的教程大部分是py的，很少ament_cmake，资料零散
+4. 可以用solidworks建一个更好看的小车模型
+5. 写注释是快乐的，一步步知道自己怎么推出来的
 
 
 

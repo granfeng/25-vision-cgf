@@ -1,0 +1,62 @@
+[0.009s] Invoking command in '/home/chen/Task/navigation_ws/build/task_one_build_bot': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/chen/Task/navigation_ws/src/task_one_build_bot -DCMAKE_INSTALL_PREFIX=/home/chen/Task/navigation_ws/install/task_one_build_bot
+[0.053s] -- The C compiler identification is GNU 11.4.0
+[0.092s] -- The CXX compiler identification is GNU 11.4.0
+[0.098s] -- Detecting C compiler ABI info
+[0.154s] -- Detecting C compiler ABI info - done
+[0.158s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.158s] -- Detecting C compile features
+[0.158s] -- Detecting C compile features - done
+[0.160s] -- Detecting CXX compiler ABI info
+[0.219s] -- Detecting CXX compiler ABI info - done
+[0.223s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.223s] -- Detecting CXX compile features
+[0.223s] -- Detecting CXX compile features - done
+[0.225s] -- Found ament_cmake: 1.3.10 (/opt/ros/humble/share/ament_cmake/cmake)
+[0.456s] -- Found Python3: /home/chen/miniconda3/bin/python3 (found version "3.12.4") found components: Interpreter 
+[0.525s] -- Found urdf: 2.6.1 (/opt/ros/humble/share/urdf/cmake)
+[0.560s] -- Found xacro: 2.0.8 (/opt/ros/humble/share/xacro/cmake)
+[0.561s] -- Found rclcpp: 16.0.10 (/opt/ros/humble/share/rclcpp/cmake)
+[0.578s] -- Found rosidl_generator_c: 3.1.5 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[0.581s] -- Found rosidl_adapter: 3.1.5 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[0.586s] -- Found rosidl_generator_cpp: 3.1.5 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[0.592s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.600s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[0.624s] -- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+[0.626s] -- Found rmw_fastrtps_cpp: 6.2.7 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+[0.641s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.692s] -- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.2")  
+[0.694s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.704s] -- Found FastRTPS: /opt/ros/humble/include  
+[0.706s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.712s] -- Found TinyXML2 via Config file: TinyXML2_DIR-NOTFOUND
+[0.719s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[0.725s] -- Looking for pthread.h
+[0.784s] -- Looking for pthread.h - found
+[0.785s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[0.842s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+[0.843s] -- Found Threads: TRUE  
+[0.872s] -- Found rclpy: 3.3.14 (/opt/ros/humble/share/rclpy/cmake)
+[0.874s] -- Found robot_state_publisher: 3.0.3 (/opt/ros/humble/share/robot_state_publisher/cmake)
+[0.897s] -- Found eigen3_cmake_module: 0.1.1 (/opt/ros/humble/share/eigen3_cmake_module/cmake)
+[0.898s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[0.898s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[0.993s] [31mCMake Error at CMakeLists.txt:15 (find_package):
+[0.993s]   By not providing "Findjoint_state_publisher.cmake" in CMAKE_MODULE_PATH
+[0.993s]   this project has asked CMake to find a package configuration file provided
+[0.993s]   by "joint_state_publisher", but CMake did not find one.
+[0.993s] 
+[0.993s]   Could not find a package configuration file provided by
+[0.993s]   "joint_state_publisher" with any of the following names:
+[0.993s] 
+[0.993s]     joint_state_publisherConfig.cmake
+[0.993s]     joint_state_publisher-config.cmake
+[0.993s] 
+[0.993s]   Add the installation prefix of "joint_state_publisher" to CMAKE_PREFIX_PATH
+[0.993s]   or set "joint_state_publisher_DIR" to a directory containing one of the
+[0.994s]   above files.  If "joint_state_publisher" provides a separate development
+[0.994s]   package or SDK, be sure it has been installed.
+[0.994s] 
+[0.994s] [0m
+[0.994s] -- Configuring incomplete, errors occurred!
+[0.994s] See also "/home/chen/Task/navigation_ws/build/task_one_build_bot/CMakeFiles/CMakeOutput.log".
+[1.001s] Invoked command in '/home/chen/Task/navigation_ws/build/task_one_build_bot' returned '1': CMAKE_PREFIX_PATH=/opt/ros/humble CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/chen/Task/navigation_ws/src/task_one_build_bot -DCMAKE_INSTALL_PREFIX=/home/chen/Task/navigation_ws/install/task_one_build_bot
