@@ -1,0 +1,1 @@
+urdf;xacro;robot_state_publisher;joint_state_publisher;joint_state_publisher_gui;rviz2;velodyne_description;velodyne_gazebo_plugins;gazebo_ros;gazebo_plugins;rclcpp;gazebo_msgs;geometry_msgs;ament_copyright;ament_flake8;ament_pep257;python3-pytest

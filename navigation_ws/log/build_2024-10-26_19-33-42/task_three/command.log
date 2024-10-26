@@ -1,0 +1,1 @@
+Invoking command in '/home/chen/Task/navigation_ws/build/task_three': CMAKE_PREFIX_PATH=/home/chen/Task/navigation_ws/install/task_one:/home/chen/Task/navigation_ws/install/task_two:/opt/ros/humble:${CMAKE_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake /home/chen/Task/navigation_ws/src/task_three -DCMAKE_INSTALL_PREFIX=/home/chen/Task/navigation_ws/install/task_three

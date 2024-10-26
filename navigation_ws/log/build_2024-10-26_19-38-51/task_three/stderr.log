@@ -1,0 +1,26 @@
+[0m** WARNING ** io features related to pcap will be disabled[0m
+[31mCMake Error at CMakeLists.txt:11 (add_executable):
+  Target "task_three_node" links to target "sensor_msgs::sensor_msgs" but the
+  target was not found.  Perhaps a find_package() call is missing for an
+  IMPORTED target, or an ALIAS target is missing?
+
+[0m
+[31mCMake Error at CMakeLists.txt:11 (add_executable):
+  Target "task_three_node" links to target "pcl_conversions::pcl_conversions"
+  but the target was not found.  Perhaps a find_package() call is missing for
+  an IMPORTED target, or an ALIAS target is missing?
+
+[0m
+[33mCMake Warning at CMakeLists.txt:11 (add_executable):
+  Cannot generate a safe runtime search path for target task_three_node
+  because files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [libz.so.1] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /home/chen/miniconda3/lib
+
+  Some of these libraries may not be found correctly.
+
+[0m
+[0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+gmake: *** [Makefile:267：cmake_check_build_system] 错误 1

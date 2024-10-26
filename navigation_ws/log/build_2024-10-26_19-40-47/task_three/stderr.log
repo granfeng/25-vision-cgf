@@ -1,0 +1,37 @@
+[33mCMake Warning (dev) at CMakeLists.txt:9 (find_package):
+  Policy CMP0074 is not set: find_package uses <PackageName>_ROOT variables.
+  Run "cmake --help-policy CMP0074" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  CMake variable PCL_ROOT is set to:
+
+    /usr
+
+  For compatibility, CMake is ignoring the variable.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+[0m
+[31mCMake Error at CMakeLists.txt:12 (add_executable):
+  Target "task_three_node" links to target "sensor_msgs::sensor_msgs" but the
+  target was not found.  Perhaps a find_package() call is missing for an
+  IMPORTED target, or an ALIAS target is missing?
+
+[0m
+[31mCMake Error at CMakeLists.txt:12 (add_executable):
+  Target "task_three_node" links to target "pcl_conversions::pcl_conversions"
+  but the target was not found.  Perhaps a find_package() call is missing for
+  an IMPORTED target, or an ALIAS target is missing?
+
+[0m
+[33mCMake Warning at CMakeLists.txt:12 (add_executable):
+  Cannot generate a safe runtime search path for target task_three_node
+  because files in some directories may conflict with libraries in implicit
+  directories:
+
+    runtime library [libz.so.1] in /usr/lib/x86_64-linux-gnu may be hidden by files in:
+      /home/chen/miniconda3/lib
+
+  Some of these libraries may not be found correctly.
+
+[0m
+[0mCMake Generate step failed.  Build files cannot be regenerated correctly.[0m
+gmake: *** [Makefile:267：cmake_check_build_system] 错误 1

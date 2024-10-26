@@ -1,0 +1,10 @@
+[  0%] Built target ament_cmake_python_copy_task_one_setup
+[  0%] Built target ament_cmake_python_copy_task_one
+[ 50%] [32mBuilding CXX object CMakeFiles/car_controller.dir/src/car_controller.cpp.o[0m
+running egg_info
+writing task_one.egg-info/PKG-INFO
+writing dependency_links to task_one.egg-info/dependency_links.txt
+writing top-level names to task_one.egg-info/top_level.txt
+reading manifest file 'task_one.egg-info/SOURCES.txt'
+writing manifest file 'task_one.egg-info/SOURCES.txt'
+[ 50%] Built target ament_cmake_python_build_task_one_egg

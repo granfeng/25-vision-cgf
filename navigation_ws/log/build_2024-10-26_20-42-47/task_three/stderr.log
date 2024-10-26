@@ -1,0 +1,7 @@
+[01m[K/home/chen/Task/navigation_ws/src/task_three/src/task_three_node.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/msg/point_cloud2.hpp: 没有那个文件或目录
+    2 | #include [01;31m[K<sensor_msgs/msg/point_cloud2.hpp>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+gmake[2]: *** [CMakeFiles/task_three_node.dir/build.make:76：CMakeFiles/task_three_node.dir/src/task_three_node.cpp.o] 错误 1
+gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/task_three_node.dir/all] 错误 2
+gmake: *** [Makefile:146：all] 错误 2

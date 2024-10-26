@@ -1,0 +1,13 @@
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/uninstall.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/task_one_uninstall.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/car_controller.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/ament_cmake_python_copy_task_one.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/ament_cmake_python_copy_task_one_setup.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/ament_cmake_python_build_task_one_egg.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/test.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/edit_cache.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/rebuild_cache.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/list_install_components.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/install.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/install/local.dir
+/home/chen/Task/navigation_ws/build/task_one/CMakeFiles/install/strip.dir

@@ -1,0 +1,20 @@
+[0.014s] Invoking command in '/home/chen/Task/navigation_ws/build/task_one': CMAKE_PREFIX_PATH=/home/chen/Task/navigation_ws/install/task_one:/home/chen/Task/navigation_ws/install/task_two:/opt/ros/humble:/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins:/home/chen/Task/navigation_ws/install/velodyne_description:/home/chen/Task/navigation_ws/install/velodyne_simulator CONDA_PROMPT_MODIFIER=(base) PKG_CONFIG_PATH=/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/lib/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_description/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_description/lib/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_simulator/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_simulator/lib/pkgconfig ROS_PACKAGE_PATH=/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/share:/home/chen/Task/navigation_ws/install/velodyne_description/share:/home/chen/Task/navigation_ws/install/velodyne_simulator/share /usr/bin/cmake --build /home/chen/Task/navigation_ws/build/task_one -- -j16 -l16
+[0.060s] [  0%] Built target ament_cmake_python_copy_task_one_setup
+[0.062s] [  0%] Built target ament_cmake_python_copy_task_one
+[0.071s] [ 50%] [32mBuilding CXX object CMakeFiles/car_controller.dir/src/car_controller.cpp.o[0m
+[0.077s] [01m[K/home/chen/Task/navigation_ws/src/task_one/src/car_controller.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: 没有那个文件或目录
+[0.077s]     1 | #include [01;31m[K<rclcpp/rclcpp.hpp>[m[K
+[0.077s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[0.077s] compilation terminated.
+[0.078s] gmake[2]: *** [CMakeFiles/car_controller.dir/build.make:76：CMakeFiles/car_controller.dir/src/car_controller.cpp.o] 错误 1
+[0.078s] gmake[1]: *** [CMakeFiles/Makefile2:141：CMakeFiles/car_controller.dir/all] 错误 2
+[0.078s] gmake[1]: *** 正在等待未完成的任务....
+[0.184s] running egg_info
+[0.191s] writing task_one.egg-info/PKG-INFO
+[0.192s] writing dependency_links to task_one.egg-info/dependency_links.txt
+[0.192s] writing top-level names to task_one.egg-info/top_level.txt
+[0.217s] reading manifest file 'task_one.egg-info/SOURCES.txt'
+[0.217s] writing manifest file 'task_one.egg-info/SOURCES.txt'
+[0.246s] [ 50%] Built target ament_cmake_python_build_task_one_egg
+[0.248s] gmake: *** [Makefile:146：all] 错误 2
+[0.249s] Invoked command in '/home/chen/Task/navigation_ws/build/task_one' returned '2': CMAKE_PREFIX_PATH=/home/chen/Task/navigation_ws/install/task_one:/home/chen/Task/navigation_ws/install/task_two:/opt/ros/humble:/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins:/home/chen/Task/navigation_ws/install/velodyne_description:/home/chen/Task/navigation_ws/install/velodyne_simulator CONDA_PROMPT_MODIFIER=(base) PKG_CONFIG_PATH=/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/lib/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_description/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_description/lib/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_simulator/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_simulator/lib/pkgconfig ROS_PACKAGE_PATH=/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/share:/home/chen/Task/navigation_ws/install/velodyne_description/share:/home/chen/Task/navigation_ws/install/velodyne_simulator/share /usr/bin/cmake --build /home/chen/Task/navigation_ws/build/task_one -- -j16 -l16

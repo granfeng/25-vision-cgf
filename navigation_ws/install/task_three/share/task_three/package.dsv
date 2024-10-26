@@ -1,0 +1,5 @@
+source;share/task_three/local_setup.bash
+source;share/task_three/local_setup.dsv
+source;share/task_three/local_setup.ps1
+source;share/task_three/local_setup.sh
+source;share/task_three/local_setup.zsh

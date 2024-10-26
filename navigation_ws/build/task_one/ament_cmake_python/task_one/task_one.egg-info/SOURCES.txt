@@ -1,0 +1,7 @@
+setup.cfg
+setup.py
+task_one/__init__.py
+task_one.egg-info/PKG-INFO
+task_one.egg-info/SOURCES.txt
+task_one.egg-info/dependency_links.txt
+task_one.egg-info/top_level.txt

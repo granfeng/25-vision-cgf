@@ -136,4 +136,38 @@
         <origin xyz="0 0 0.1" rpy="0 0 0"/>
     </xacro:HDL-32E>
 
+    <!-- 定义球体模型 -->
+    <xacro:macro name="sphere_model" params="name radius">
+        <link name="${name}_link">
+            <visual>
+                <geometry>
+                    <sphere radius="${radius}"/>
+                </geometry>
+                <material name="red">
+                    <color rgba="1 0 0 1"/>
+                </material>
+            </visual>
+            <collision>
+                <geometry>
+                    <sphere radius="${radius}"/>
+                </geometry>
+            </collision>
+        </link>
+        <gazebo reference="${name}_link">
+            <material>Gazebo/Red</material>
+        </gazebo>
+    </xacro:macro>
+
+    <!-- 使用球体模型 -->
+    <xacro:sphere_model name="my_sphere" radius="0.5"/>
+
+    <!-- 添加平动运动插件 -->
+    <gazebo>
+        <plugin name="car_drive_plugin" filename="libcar_drive.so">
+            <robotNamespace>/</robotNamespace>
+            <commandTopic>/cmd_vel</commandTopic>
+            <odometryTopic>/odom</odometryTopic>
+        </plugin>
+    </gazebo>
+
 </robot>

@@ -1,0 +1,25 @@
+[0.009s] Invoking command in '/home/chen/Task/navigation_ws/build/task_one': CMAKE_PREFIX_PATH=/home/chen/Task/navigation_ws/install/task_one:/home/chen/Task/navigation_ws/install/task_two:/opt/ros/humble:/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins:/home/chen/Task/navigation_ws/install/velodyne_description:/home/chen/Task/navigation_ws/install/velodyne_simulator CONDA_PROMPT_MODIFIER=(base) PKG_CONFIG_PATH=/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/lib/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_description/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_description/lib/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_simulator/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_simulator/lib/pkgconfig ROS_PACKAGE_PATH=/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/share:/home/chen/Task/navigation_ws/install/velodyne_description/share:/home/chen/Task/navigation_ws/install/velodyne_simulator/share /usr/bin/cmake --build /home/chen/Task/navigation_ws/build/task_one -- -j16 -l16
+[0.051s] [ 16%] [32mBuilding CXX object CMakeFiles/speed_controller.dir/src/speed_controller.cpp.o[0m
+[0.055s] [ 33%] [32mBuilding CXX object CMakeFiles/sphere_controller.dir/src/sphere_controller.cpp.o[0m
+[0.058s] [01m[K/home/chen/Task/navigation_ws/src/task_one/src/speed_controller.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: 没有那个文件或目录
+[0.058s]     1 | #include [01;31m[K<rclcpp/rclcpp.hpp>[m[K
+[0.058s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[0.058s] compilation terminated.
+[0.058s] gmake[2]: *** [CMakeFiles/speed_controller.dir/build.make:76：CMakeFiles/speed_controller.dir/src/speed_controller.cpp.o] 错误 1
+[0.058s] gmake[1]: *** [CMakeFiles/Makefile2:193：CMakeFiles/speed_controller.dir/all] 错误 2
+[0.058s] gmake[1]: *** 正在等待未完成的任务....
+[0.060s] [ 50%] [32mBuilding CXX object CMakeFiles/car_controller.dir/src/car_controller.cpp.o[0m
+[0.062s] [01m[K/home/chen/Task/navigation_ws/src/task_one/src/sphere_controller.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: 没有那个文件或目录
+[0.062s]     1 | #include [01;31m[K<rclcpp/rclcpp.hpp>[m[K
+[0.062s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[0.062s] compilation terminated.
+[0.063s] gmake[2]: *** [CMakeFiles/sphere_controller.dir/build.make:76：CMakeFiles/sphere_controller.dir/src/sphere_controller.cpp.o] 错误 1
+[0.063s] gmake[1]: *** [CMakeFiles/Makefile2:141：CMakeFiles/sphere_controller.dir/all] 错误 2
+[0.066s] [01m[K/home/chen/Task/navigation_ws/src/task_one/src/car_controller.cpp:1:10:[m[K [01;31m[Kfatal error: [m[Krclcpp/rclcpp.hpp: 没有那个文件或目录
+[0.066s]     1 | #include [01;31m[K<rclcpp/rclcpp.hpp>[m[K
+[0.066s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~[m[K
+[0.066s] compilation terminated.
+[0.067s] gmake[2]: *** [CMakeFiles/car_controller.dir/build.make:76：CMakeFiles/car_controller.dir/src/car_controller.cpp.o] 错误 1
+[0.067s] gmake[1]: *** [CMakeFiles/Makefile2:167：CMakeFiles/car_controller.dir/all] 错误 2
+[0.067s] gmake: *** [Makefile:146：all] 错误 2
+[0.069s] Invoked command in '/home/chen/Task/navigation_ws/build/task_one' returned '2': CMAKE_PREFIX_PATH=/home/chen/Task/navigation_ws/install/task_one:/home/chen/Task/navigation_ws/install/task_two:/opt/ros/humble:/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins:/home/chen/Task/navigation_ws/install/velodyne_description:/home/chen/Task/navigation_ws/install/velodyne_simulator CONDA_PROMPT_MODIFIER=(base) PKG_CONFIG_PATH=/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/lib/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_description/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_description/lib/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_simulator/lib/x86_64-linux-gnu/pkgconfig:/home/chen/Task/navigation_ws/install/velodyne_simulator/lib/pkgconfig ROS_PACKAGE_PATH=/home/chen/Task/navigation_ws/install/velodyne_gazebo_plugins/share:/home/chen/Task/navigation_ws/install/velodyne_description/share:/home/chen/Task/navigation_ws/install/velodyne_simulator/share /usr/bin/cmake --build /home/chen/Task/navigation_ws/build/task_one -- -j16 -l16

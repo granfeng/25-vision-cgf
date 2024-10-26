@@ -1,6 +1,8 @@
 source;share/task_one/hook/pythonpath.ps1
 source;share/task_one/hook/pythonpath.dsv
 source;share/task_one/hook/pythonpath.sh
-source;share/task_one/hook/ament_prefix_path.ps1
-source;share/task_one/hook/ament_prefix_path.dsv
-source;share/task_one/hook/ament_prefix_path.sh
+source;share/task_one/local_setup.bash
+source;share/task_one/local_setup.dsv
+source;share/task_one/local_setup.ps1
+source;share/task_one/local_setup.sh
+source;share/task_one/local_setup.zsh

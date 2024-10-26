@@ -1,0 +1,10 @@
+[0.010s] Invoking command in '/home/chen/Task/navigation_ws/build/task_three': CMAKE_PREFIX_PATH=/home/chen/Task/navigation_ws/install/task_one:/home/chen/Task/navigation_ws/install/task_two:/opt/ros/humble:${CMAKE_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/chen/Task/navigation_ws/build/task_three -- -j16 -l16
+[0.052s] [ 50%] [32mBuilding CXX object CMakeFiles/task_three_node.dir/src/task_three_node.cpp.o[0m
+[0.242s] [01m[K/home/chen/Task/navigation_ws/src/task_three/src/task_three_node.cpp:2:10:[m[K [01;31m[Kfatal error: [m[Ksensor_msgs/msg/point_cloud2.hpp: 没有那个文件或目录
+[0.242s]     2 | #include [01;31m[K<sensor_msgs/msg/point_cloud2.hpp>[m[K
+[0.242s]       |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[0.242s] compilation terminated.
+[0.247s] gmake[2]: *** [CMakeFiles/task_three_node.dir/build.make:76：CMakeFiles/task_three_node.dir/src/task_three_node.cpp.o] 错误 1
+[0.247s] gmake[1]: *** [CMakeFiles/Makefile2:137：CMakeFiles/task_three_node.dir/all] 错误 2
+[0.248s] gmake: *** [Makefile:146：all] 错误 2
+[0.250s] Invoked command in '/home/chen/Task/navigation_ws/build/task_three' returned '2': CMAKE_PREFIX_PATH=/home/chen/Task/navigation_ws/install/task_one:/home/chen/Task/navigation_ws/install/task_two:/opt/ros/humble:${CMAKE_PREFIX_PATH} CONDA_PROMPT_MODIFIER=(base) /usr/bin/cmake --build /home/chen/Task/navigation_ws/build/task_three -- -j16 -l16
