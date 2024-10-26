@@ -18,4 +18,4 @@ install(CODE "execute_process(COMMAND ${ament_cmake_python_executable} -m ament_
 
 ament_export_dependencies(rclcpp sensor_msgs tf2_ros gazebo_ros gazebo_dev)
 
-ament_package()`
+ament_package()

@@ -14,8 +14,10 @@
   <depend>joint_state_publisher</depend>
   <depend>joint_state_publisher_gui</depend>
   <depend>rviz2</depend>
-  <depend>velodyne_driver</depend>
-  <depend>velodyne_pointcloud</depend>
+  <depend>velodyne_description</depend>
+  <depend>velodyne_gazebo_plugins</depend>
+  <depend>gazebo_ros</depend>
+  <depend>gazebo_plugins</depend>
 
   <!-- 测试依赖项 -->
   <test_depend>ament_copyright</test_depend>

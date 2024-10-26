@@ -10,6 +10,7 @@ setup.py
 ../../build/task_one/task_one.egg-info/zip-safe
 launch/display.launch.py
 launch/display_xacro.launch.py
+launch/gazebo.launch.py
 resource/task_one
 task_one/__init__.py
 urdf/xiaoche.urdf

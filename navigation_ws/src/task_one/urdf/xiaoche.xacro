@@ -90,37 +90,37 @@
             <child link="${name}"/>
             <origin xyz="${x} ${y} ${z}" rpy="${roll} ${pitch} ${yaw}"/> <!-- 相机的位置和姿态相对于车身 -->
         </joint>
+
+        <!-- 添加 Gazebo 插件 -->
+        <gazebo reference="${name}">
+            <sensor type="camera" name="${name}_camera">
+                <camera>
+                    <horizontal_fov>1.047</horizontal_fov>
+                    <image>
+                        <width>640</width>
+                        <height>480</height>
+                        <format>R8G8B8</format>
+                    </image>
+                    <clip>
+                        <near>0.02</near>
+                        <far>300</far>
+                    </clip>
+                </camera>
+                <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+                    <ros>
+                        <namespace>/</namespace>
+                        <remapping>image_raw:=${name}/image_raw</remapping>
+                    </ros>
+                    <cameraName>${name}</cameraName>
+                    <frameName>${name}_optical_frame</frameName>
+                    <updateRate>30.0</updateRate>
+                </plugin>
+            </sensor>
+        </gazebo>
     </xacro:macro>
 
-    <!-- 定义激光雷达的宏 -->
-    <xacro:macro name="lidar" params="name x y z roll pitch yaw">
-        <link name="${name}">
-            <visual>
-                <geometry>
-                    <cylinder radius="0.05" length="0.05"/> <!-- 激光雷达的半径和厚度 -->
-                </geometry>
-                <origin xyz="0 0 0" rpy="0 0 0"/> <!-- 激光雷达的初始位置和姿态 -->
-                <material name="black"/> <!-- 引用黑色材质 -->
-            </visual>
-            <collision>
-                <geometry>
-                    <cylinder radius="0.05" length="0.05"/> <!-- 激光雷达的碰撞体积 -->
-                </geometry>
-                <origin xyz="0 0 0" rpy="0 0 0"/> <!-- 碰撞体积的初始位置和姿态 -->
-            </collision>
-            <inertial>
-                <mass value="0.5"/> <!-- 激光雷达的质量 -->
-                <origin xyz="0 0 0" rpy="0 0 0"/> <!-- 质心的位置 -->
-                <inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/> <!-- 惯性矩阵 -->
-            </inertial>
-        </link>
-
-        <joint name="${name}_joint" type="fixed">
-            <parent link="base_link"/>
-            <child link="${name}"/>
-            <origin xyz="${x} ${y} ${z}" rpy="${roll} ${pitch} ${yaw}"/> <!-- 激光雷达的位置和姿态相对于车身 -->
-        </joint>
-    </xacro:macro>
+    <!-- 导入雷达仿真包中的 Xacro 文件 -->
+    <xacro:include filename="$(find velodyne_description)/urdf/HDL-32E.urdf.xacro"/>
 
     <!-- 使用宏定义车轮 -->
     <xacro:wheel name="front_left_wheel" x="0.2" y="0.15" z="-0.0667"/>
@@ -132,6 +132,8 @@
     <xacro:camera name="camera" x="0.25" y="0" z="0.1" roll="0" pitch="0" yaw="0"/>
 
     <!-- 使用宏定义激光雷达 -->
-    <xacro:lidar name="lidar" x="0" y="0" z="0.1" roll="0" pitch="0" yaw="0"/>
+    <xacro:HDL-32E parent="base_link" name="lidar">
+        <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    </xacro:HDL-32E>
 
 </robot>

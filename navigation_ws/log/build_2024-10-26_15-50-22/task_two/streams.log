@@ -1,0 +1,20 @@
+[0.400s] Invoking command in '/home/chen/Task/navigation_ws/src/task_two': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/chen/Task/navigation_ws/build/task_two/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/chen/Task/navigation_ws/install/task_two/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/task_two build --build-base /home/chen/Task/navigation_ws/build/task_two/build install --record /home/chen/Task/navigation_ws/build/task_two/install.log --single-version-externally-managed install_data
+[0.524s] running egg_info
+[0.524s] writing ../../build/task_two/task_two.egg-info/PKG-INFO
+[0.525s] writing dependency_links to ../../build/task_two/task_two.egg-info/dependency_links.txt
+[0.525s] writing entry points to ../../build/task_two/task_two.egg-info/entry_points.txt
+[0.525s] writing requirements to ../../build/task_two/task_two.egg-info/requires.txt
+[0.525s] writing top-level names to ../../build/task_two/task_two.egg-info/top_level.txt
+[0.526s] reading manifest file '../../build/task_two/task_two.egg-info/SOURCES.txt'
+[0.526s] writing manifest file '../../build/task_two/task_two.egg-info/SOURCES.txt'
+[0.526s] running build
+[0.526s] running build_py
+[0.526s] running install
+[0.527s] running install_lib
+[0.527s] running install_data
+[0.527s] running install_egg_info
+[0.528s] removing '/home/chen/Task/navigation_ws/install/task_two/lib/python3.10/site-packages/task_two-0.0.0-py3.10.egg-info' (and everything under it)
+[0.529s] Copying ../../build/task_two/task_two.egg-info to /home/chen/Task/navigation_ws/install/task_two/lib/python3.10/site-packages/task_two-0.0.0-py3.10.egg-info
+[0.529s] running install_scripts
+[0.543s] writing list of installed files to '/home/chen/Task/navigation_ws/build/task_two/install.log'
+[0.559s] Invoked command in '/home/chen/Task/navigation_ws/src/task_two' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/chen/Task/navigation_ws/build/task_two/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/chen/Task/navigation_ws/install/task_two/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/task_two build --build-base /home/chen/Task/navigation_ws/build/task_two/build install --record /home/chen/Task/navigation_ws/build/task_two/install.log --single-version-externally-managed install_data

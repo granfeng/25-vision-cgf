@@ -17,12 +17,13 @@
     + 编译运行
 
 ### ***2. 实现遇到的困难or提升空间***
-1. catkin包移植到ros2上，比较复杂（次级困难，理解文本工作量大）
+1. 雷达catkin包移植到ros2上，比较复杂（次级困难，理解文本，改cmakelists）
 2. py语言基础不好，launch读起来很费劲
 3. 找到的教程大部分是py的，很少ament_cmake，资料零散
-4. ***joint_state_publisher突然显示找不到***(重大困难，直接阻塞)
+4. ***joint_state_publisher突然显示找不到***(重大困难，直接阻塞，迫不得已改用py)
 5. 可以用solidworks建一个更好看的小车模型
 6. 了解小车要多少个雷达可以达到最好的探测效果
+7. xacro 命令在解析 xiaoche.xacro 文件时找不到 velodyne_description 包中的 velodyne_hdl32e.urdf.xacro 文件（命名错误，解决）
 
 
 

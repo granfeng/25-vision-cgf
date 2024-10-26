@@ -4,8 +4,8 @@
 /home/chen/Task/navigation_ws/install/task_one/share/task_one/package.xml
 /home/chen/Task/navigation_ws/install/task_one/share/task_one/launch/display.launch.py
 /home/chen/Task/navigation_ws/install/task_one/share/task_one/launch/display_xacro.launch.py
+/home/chen/Task/navigation_ws/install/task_one/share/task_one/launch/gazebo.launch.py
 /home/chen/Task/navigation_ws/install/task_one/share/task_one/urdf/xiaoche.xacro
-/home/chen/Task/navigation_ws/install/task_one/share/task_one/rviz
 /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one-0.0.0-py3.10.egg-info/dependency_links.txt
 /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one-0.0.0-py3.10.egg-info/PKG-INFO
 /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one-0.0.0-py3.10.egg-info/SOURCES.txt
