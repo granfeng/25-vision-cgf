@@ -24,6 +24,7 @@
 5. 可以用solidworks建一个更好看的小车模型
 6. 了解小车要多少个雷达可以达到最好的探测效果
 7. xacro 命令在解析 xiaoche.xacro 文件时找不到 velodyne_description 包中的 velodyne_hdl32e.urdf.xacro 文件（命名错误，解决）
+8. xacro转回urdf时，无缘报错，gazebo启动即崩溃，加载不出模型
 
 
 

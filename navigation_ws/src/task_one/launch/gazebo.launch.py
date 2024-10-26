@@ -1,32 +1,22 @@
 from launch import LaunchDescription
 from launch_ros.actions import Node
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+from ament_index_python.packages import get_package_share_path
 
 def generate_launch_description():
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([str(get_package_share_path('gazebo_ros')), '/launch/gazebo.launch.py']),
+    )
+
+    spawn_entity = Node(
+        package='gazebo_ros',
+        executable='spawn_entity.py',
+        arguments=['-entity', 'bot_xiaoche', '-file', str(get_package_share_path('task_one') / 'urdf/xiaoche.urdf')],
+        output='screen'
+    )
+
     return LaunchDescription([
-        # 启动 Gazebo 服务器
-        Node(
-            package='gazebo_ros',
-            executable='gzserver',
-            arguments=['-s', 'libgazebo_ros_init.so', '-s', 'libgazebo_ros_factory.so'],
-            output='screen'
-        ),
-
-        # 启动 Gazebo 客户端
-        Node(
-            package='gazebo_ros',
-            executable='gzclient',
-            output='screen'
-        ),
-
-        # 加载机器人模型
-        Node(
-            package='gazebo_ros',
-            executable='spawn_entity.py',
-            arguments=[
-                '-entity', 'bot_xiaoche',
-                '-file', '/home/chen/Task/navigation_ws/install/task_one/share/task_one/urdf/xiaoche.urdf',
-                '--ros-args'
-            ],
-            output='screen'
-        )
+        gazebo,
+        spawn_entity,
     ])
