@@ -1,1 +1,1 @@
-joint_state_publisher:joint_state_publisher_gui:robot_state_publisher:rviz2:urdf:velodyne_simulator:xacro
+joint_state_publisher:joint_state_publisher_gui:robot_state_publisher:rviz2:urdf:velodyne_driver:velodyne_pointcloud:xacro

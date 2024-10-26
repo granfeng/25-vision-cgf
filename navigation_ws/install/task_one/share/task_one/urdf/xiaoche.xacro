@@ -31,7 +31,7 @@
         </inertial>
     </link>
 
-    <!-- 定义车轮 -->
+    <!-- 定义车轮的宏 -->
     <xacro:macro name="wheel" params="name x y z">
         <link name="${name}">
             <visual>
@@ -62,7 +62,7 @@
         </joint>
     </xacro:macro>
 
-    <!-- 定义相机 -->
+    <!-- 定义相机的宏 -->
     <xacro:macro name="camera" params="name x y z roll pitch yaw">
         <link name="${name}">
             <visual>
@@ -92,7 +92,7 @@
         </joint>
     </xacro:macro>
 
-    <!-- 定义激光雷达 -->
+    <!-- 定义激光雷达的宏 -->
     <xacro:macro name="lidar" params="name x y z roll pitch yaw">
         <link name="${name}">
             <visual>

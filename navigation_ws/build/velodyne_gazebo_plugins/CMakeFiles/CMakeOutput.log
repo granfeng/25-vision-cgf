@@ -449,3 +449,51 @@ Parsed CXX implicit link information from above output:
   implicit fwks: []
 
 
+Determining if the include file pthread.h exists passed with the following output:
+Change Dir: /home/chen/Task/navigation_ws/build/velodyne_gazebo_plugins/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_d4b64/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_d4b64.dir/build.make CMakeFiles/cmTC_d4b64.dir/build
+gmake[1]: 进入目录“/home/chen/Task/navigation_ws/build/velodyne_gazebo_plugins/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_d4b64.dir/CheckIncludeFile.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_d4b64.dir/CheckIncludeFile.c.o -c /home/chen/Task/navigation_ws/build/velodyne_gazebo_plugins/CMakeFiles/CMakeTmp/CheckIncludeFile.c
+Linking C executable cmTC_d4b64
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4b64.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_d4b64.dir/CheckIncludeFile.c.o -o cmTC_d4b64 
+gmake[1]: 离开目录“/home/chen/Task/navigation_ws/build/velodyne_gazebo_plugins/CMakeFiles/CMakeTmp”
+
+
+
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD succeeded with the following output:
+Change Dir: /home/chen/Task/navigation_ws/build/velodyne_gazebo_plugins/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/gmake -f Makefile cmTC_a58dd/fast && /usr/bin/gmake  -f CMakeFiles/cmTC_a58dd.dir/build.make CMakeFiles/cmTC_a58dd.dir/build
+gmake[1]: 进入目录“/home/chen/Task/navigation_ws/build/velodyne_gazebo_plugins/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_a58dd.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_a58dd.dir/src.c.o -c /home/chen/Task/navigation_ws/build/velodyne_gazebo_plugins/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_a58dd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a58dd.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_a58dd.dir/src.c.o -o cmTC_a58dd 
+gmake[1]: 离开目录“/home/chen/Task/navigation_ws/build/velodyne_gazebo_plugins/CMakeFiles/CMakeTmp”
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
