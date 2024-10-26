@@ -1,0 +1,38 @@
+running egg_info
+creating ../../build/task_one/task_one.egg-info
+writing ../../build/task_one/task_one.egg-info/PKG-INFO
+writing dependency_links to ../../build/task_one/task_one.egg-info/dependency_links.txt
+writing entry points to ../../build/task_one/task_one.egg-info/entry_points.txt
+writing requirements to ../../build/task_one/task_one.egg-info/requires.txt
+writing top-level names to ../../build/task_one/task_one.egg-info/top_level.txt
+writing manifest file '../../build/task_one/task_one.egg-info/SOURCES.txt'
+reading manifest file '../../build/task_one/task_one.egg-info/SOURCES.txt'
+writing manifest file '../../build/task_one/task_one.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/chen/Task/navigation_ws/build/task_one/build
+creating /home/chen/Task/navigation_ws/build/task_one/build/lib
+creating /home/chen/Task/navigation_ws/build/task_one/build/lib/task_one
+copying task_one/__init__.py -> /home/chen/Task/navigation_ws/build/task_one/build/lib/task_one
+running install
+running install_lib
+creating /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one
+copying /home/chen/Task/navigation_ws/build/task_one/build/lib/task_one/__init__.py -> /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one
+byte-compiling /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one/__init__.py to __init__.cpython-310.pyc
+running install_data
+creating /home/chen/Task/navigation_ws/install/task_one/share/ament_index
+creating /home/chen/Task/navigation_ws/install/task_one/share/ament_index/resource_index
+creating /home/chen/Task/navigation_ws/install/task_one/share/ament_index/resource_index/packages
+copying resource/task_one -> /home/chen/Task/navigation_ws/install/task_one/share/ament_index/resource_index/packages
+copying package.xml -> /home/chen/Task/navigation_ws/install/task_one/share/task_one
+creating /home/chen/Task/navigation_ws/install/task_one/share/task_one/launch
+copying launch/display.launch.py -> /home/chen/Task/navigation_ws/install/task_one/share/task_one/launch
+copying launch/display_xacro.launch.py -> /home/chen/Task/navigation_ws/install/task_one/share/task_one/launch
+creating /home/chen/Task/navigation_ws/install/task_one/share/task_one/urdf
+copying urdf/xiaoche.urdf -> /home/chen/Task/navigation_ws/install/task_one/share/task_one/urdf
+creating /home/chen/Task/navigation_ws/install/task_one/share/task_one/rviz
+copying rviz/urdf.rviz -> /home/chen/Task/navigation_ws/install/task_one/share/task_one/rviz
+running install_egg_info
+Copying ../../build/task_one/task_one.egg-info to /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/chen/Task/navigation_ws/build/task_one/install.log'

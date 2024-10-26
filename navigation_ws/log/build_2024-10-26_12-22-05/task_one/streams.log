@@ -1,0 +1,40 @@
+[0.348s] Invoking command in '/home/chen/Task/navigation_ws/src/task_one': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/chen/Task/navigation_ws/build/task_one/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/task_one build --build-base /home/chen/Task/navigation_ws/build/task_one/build install --record /home/chen/Task/navigation_ws/build/task_one/install.log --single-version-externally-managed install_data
+[0.469s] running egg_info
+[0.469s] creating ../../build/task_one/task_one.egg-info
+[0.469s] writing ../../build/task_one/task_one.egg-info/PKG-INFO
+[0.469s] writing dependency_links to ../../build/task_one/task_one.egg-info/dependency_links.txt
+[0.469s] writing entry points to ../../build/task_one/task_one.egg-info/entry_points.txt
+[0.469s] writing requirements to ../../build/task_one/task_one.egg-info/requires.txt
+[0.469s] writing top-level names to ../../build/task_one/task_one.egg-info/top_level.txt
+[0.469s] writing manifest file '../../build/task_one/task_one.egg-info/SOURCES.txt'
+[0.470s] reading manifest file '../../build/task_one/task_one.egg-info/SOURCES.txt'
+[0.471s] writing manifest file '../../build/task_one/task_one.egg-info/SOURCES.txt'
+[0.471s] running build
+[0.471s] running build_py
+[0.471s] creating /home/chen/Task/navigation_ws/build/task_one/build
+[0.471s] creating /home/chen/Task/navigation_ws/build/task_one/build/lib
+[0.471s] creating /home/chen/Task/navigation_ws/build/task_one/build/lib/task_one
+[0.471s] copying task_one/__init__.py -> /home/chen/Task/navigation_ws/build/task_one/build/lib/task_one
+[0.471s] running install
+[0.471s] running install_lib
+[0.471s] creating /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one
+[0.471s] copying /home/chen/Task/navigation_ws/build/task_one/build/lib/task_one/__init__.py -> /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one
+[0.472s] byte-compiling /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one/__init__.py to __init__.cpython-310.pyc
+[0.472s] running install_data
+[0.472s] creating /home/chen/Task/navigation_ws/install/task_one/share/ament_index
+[0.472s] creating /home/chen/Task/navigation_ws/install/task_one/share/ament_index/resource_index
+[0.472s] creating /home/chen/Task/navigation_ws/install/task_one/share/ament_index/resource_index/packages
+[0.472s] copying resource/task_one -> /home/chen/Task/navigation_ws/install/task_one/share/ament_index/resource_index/packages
+[0.472s] copying package.xml -> /home/chen/Task/navigation_ws/install/task_one/share/task_one
+[0.472s] creating /home/chen/Task/navigation_ws/install/task_one/share/task_one/launch
+[0.472s] copying launch/display.launch.py -> /home/chen/Task/navigation_ws/install/task_one/share/task_one/launch
+[0.472s] copying launch/display_xacro.launch.py -> /home/chen/Task/navigation_ws/install/task_one/share/task_one/launch
+[0.472s] creating /home/chen/Task/navigation_ws/install/task_one/share/task_one/urdf
+[0.472s] copying urdf/xiaoche.urdf -> /home/chen/Task/navigation_ws/install/task_one/share/task_one/urdf
+[0.472s] creating /home/chen/Task/navigation_ws/install/task_one/share/task_one/rviz
+[0.472s] copying rviz/urdf.rviz -> /home/chen/Task/navigation_ws/install/task_one/share/task_one/rviz
+[0.473s] running install_egg_info
+[0.474s] Copying ../../build/task_one/task_one.egg-info to /home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages/task_one-0.0.0-py3.10.egg-info
+[0.474s] running install_scripts
+[0.487s] writing list of installed files to '/home/chen/Task/navigation_ws/build/task_one/install.log'
+[0.504s] Invoked command in '/home/chen/Task/navigation_ws/src/task_one' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/chen/Task/navigation_ws/build/task_one/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/chen/Task/navigation_ws/install/task_one/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/task_one build --build-base /home/chen/Task/navigation_ws/build/task_one/build install --record /home/chen/Task/navigation_ws/build/task_one/install.log --single-version-externally-managed install_data

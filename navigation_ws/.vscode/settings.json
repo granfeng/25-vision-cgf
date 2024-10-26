@@ -1,5 +1,5 @@
 {
-    "cmake.sourceDirectory": "/home/chen/Task/Navigation_ws/src/BasicTask_ONE",
+    "cmake.sourceDirectory": "/home/chen/Task/navigation_ws/src/task_one_build_bot",
     "python.autoComplete.extraPaths": [
         "/opt/ros/humble/lib/python3.10/site-packages",
         "/opt/ros/humble/local/lib/python3.10/dist-packages"

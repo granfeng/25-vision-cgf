@@ -17,11 +17,12 @@
     + 编译运行
 
 ### ***2. 实现遇到的困难or提升空间***
-1. catkin包移植到ros2上，比较复杂
+1. catkin包移植到ros2上，比较复杂（次级困难）
 2. py语言基础不好，launch读起来很费劲
 3. 找到的教程大部分是py的，很少ament_cmake，资料零散
-4. 可以用solidworks建一个更好看的小车模型
-5. 写注释是快乐的，一步步知道自己怎么推出来的
+4. ***joint_state_publisher突然显示找不到***(重大困难)
+5. 可以用solidworks建一个更好看的小车模型
+6. 写注释是快乐的，一步步知道自己怎么推出来的
 
 
 
@@ -93,6 +94,8 @@
  + ros2入门资料
    + https://fishros.com/d2lros2/#/
    + https://www.bilibili.com/video/BV1gr4y1Q7j5?spm_id_from=333.788.videopod.episodes&vd_source=8e6c4903bf3dd43b18ac0991f35e7ddc&p=95
+   + https://blog.csdn.net/weixin_45897172/article/details/136342381?spm=1001.2014.3001.5502
+   + https://blog.csdn.net/weixin_45897172/article/details/137723655?spm=1001.2014.3001.5502
  + 建模部分和xacro学习
    + https://blog.csdn.net/weixin_45897172/article/details/138439323?spm=1001.2014.3001.5502
  + 
